@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import mai.project.compose.presentation.components.CourseHintText
+import mai.project.compose.presentation.home.components.CourseHintText
 import mai.project.compose.ui.theme.Jetpack_Compose_LearningTheme
 
 @Composable

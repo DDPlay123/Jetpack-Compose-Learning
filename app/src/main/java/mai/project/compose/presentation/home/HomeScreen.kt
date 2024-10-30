@@ -17,7 +17,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
-import mai.project.compose.presentation.components.CourseItems
+import mai.project.compose.presentation.home.components.CourseItems
 import mai.project.compose.presentation.home.model.TabItem
 import mai.project.compose.presentation.home.model.getHomeTab
 import mai.project.compose.ui.theme.Jetpack_Compose_LearningTheme

@@ -14,8 +14,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import mai.project.compose.presentation.components.CourseContentText
-import mai.project.compose.presentation.components.CourseTitleText
+import mai.project.compose.presentation.home.components.CourseContentText
+import mai.project.compose.presentation.home.components.CourseTitleText
 import mai.project.compose.presentation.course_1.components.BoxExample
 import mai.project.compose.presentation.course_1.components.ColumnExample
 import mai.project.compose.presentation.course_1.components.PaddingExample
