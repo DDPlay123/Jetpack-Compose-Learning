@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import mai.project.compose.presentation.home.HomeScreenRoot
 import mai.project.compose.ui.theme.Jetpack_Compose_LearningTheme
 
 class MainActivity : ComponentActivity() {
@@ -13,7 +12,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Jetpack_Compose_LearningTheme {
-                HomeScreenRoot()
+                NavigationRoot()
             }
         }
     }
