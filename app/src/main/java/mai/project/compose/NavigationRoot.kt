@@ -14,6 +14,7 @@ import androidx.navigation.compose.rememberNavController
 import mai.project.compose.presentation.course_1.Course_1_1_ScreenRoot
 import mai.project.compose.presentation.course_1.Course_1_2_ScreenRoot
 import mai.project.compose.presentation.course_2.Course_2_1_ScreenRoot
+import mai.project.compose.presentation.course_2.Course_2_2_ScreenRoot
 import mai.project.compose.presentation.home.HomeScreenRoot
 import mai.project.compose.presentation.home.model.getHomeTab
 
@@ -61,6 +62,7 @@ private fun NavGraphBuilder.homeGraph(
                     "1-2" -> Course_1_2_ScreenRoot()
                     // Course 2
                     "2-1" -> Course_2_1_ScreenRoot()
+                    "2-2" -> Course_2_2_ScreenRoot()
                     // TODO Course 3
                     // TODO Course 4
                     // TODO Course 5
