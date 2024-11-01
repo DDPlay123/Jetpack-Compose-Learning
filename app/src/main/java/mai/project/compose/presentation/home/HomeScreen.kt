@@ -13,7 +13,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
@@ -24,11 +23,10 @@ import mai.project.compose.ui.theme.Jetpack_Compose_LearningTheme
 
 @Composable
 fun HomeScreenRoot(
-    onCourseClick: (Int, TabItem.Course) -> Unit
+    onCourseClick: (TabItem.Course) -> Unit
 ) {
-    val context = LocalContext.current
     HomeScreen(
-        tabItems = getHomeTab(context),
+        tabItems = getHomeTab,
         onCourseClick = onCourseClick
     )
 }
@@ -37,7 +35,7 @@ fun HomeScreenRoot(
 private fun HomeScreen(
     modifier: Modifier = Modifier,
     tabItems: List<TabItem>,
-    onCourseClick: (Int, TabItem.Course) -> Unit
+    onCourseClick: (TabItem.Course) -> Unit
 ) {
     // HorizontalPager 的狀態
     val pagerState = rememberPagerState(
@@ -77,7 +75,7 @@ private fun HomeScreen(
         ) { index ->
             CourseItems(
                 courses = tabItems[index].courses,
-                onItemClick = { onCourseClick(tabItems[index].index, it) }
+                onItemClick = onCourseClick
             )
         }
     }
@@ -87,10 +85,9 @@ private fun HomeScreen(
 @Composable
 private fun HomeScreenPreview() {
     Jetpack_Compose_LearningTheme {
-        val context = LocalContext.current
         HomeScreen(
-            tabItems = getHomeTab(context),
-            onCourseClick = { _, _ -> }
+            tabItems = getHomeTab,
+            onCourseClick = {}
         )
     }
 }

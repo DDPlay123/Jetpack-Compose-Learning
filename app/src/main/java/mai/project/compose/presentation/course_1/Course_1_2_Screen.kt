@@ -12,7 +12,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import mai.project.compose.presentation.course_1.components_1_2.ClickableExample
 import mai.project.compose.presentation.course_1.components_1_2.SurfaceClickPropagationExample
@@ -62,7 +62,7 @@ private fun Course_1_2_Screen(
     }
 }
 
-@Preview
+@PreviewLightDark
 @Composable
 private fun Course_1_2_ScreenPreview() {
     Jetpack_Compose_LearningTheme {

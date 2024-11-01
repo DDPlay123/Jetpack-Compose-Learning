@@ -95,7 +95,7 @@ private fun CourseItemPreview() {
     Jetpack_Compose_LearningTheme {
         CourseItem(
             course = TabItem.Course(
-                index = 1,
+                index = "1-1",
                 title = "我是標題",
                 content = "我是很長的內文我是很長的內文我是很長的內文我是很長的內文我是很長的內文我是很長的內文"
             ),

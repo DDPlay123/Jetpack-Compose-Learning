@@ -1,17 +1,12 @@
 package mai.project.compose.presentation.home.model
 
-import android.content.Context
-import mai.project.compose.R
-
 /**
  * 首頁使用的 Tab 標籤
  *
- * @param index Tab 標籤的索引
  * @param title Tab 標籤的文字
  * @param courses Tab 標籤的內容
  */
 data class TabItem(
-    val index: Int,
     val title: String,
     val courses: List<Course>
 ) {
@@ -23,7 +18,7 @@ data class TabItem(
      * @param content 內容描述
      */
     data class Course(
-        val index: Int,
+        val index: String,
         val title: String,
         val content: String
     )
@@ -31,63 +26,73 @@ data class TabItem(
 
 /**
  * 取得 Tab 標籤的資訊
- *
- * @param context [Context]
  */
-fun getHomeTab(context: Context) = listOf(
+val getHomeTab = listOf(
     TabItem(
-        index = 1,
         title = "Components",
         courses = listOf(
             TabItem.Course(
-                index = 1,
-                title = context.getString(R.string.course_1_1_title),
-                content = context.getString(R.string.course_1_1_content)
+                index = "1-1",
+                title = "1-1 Column, Row, Box, Spacer",
+                content = "建立 Rows、Columns、Box 和 Spacer，如何為 composable 元件添加修飾符。設定 padding、margin、對齊方式及其他屬性。"
             ),
             TabItem.Course(
-                index = 2,
-                title = context.getString(R.string.course_1_2_title),
-                content = context.getString(R.string.course_1_2_content)
+                index = "1-2",
+                title = "1–2 Surface, Shape, Clickable",
+                content = "建立並修改 Surface 來為 Composable 元件繪製背景，為任何 Composable 元件添加點擊操作。設置 weight 或 offset 修飾符。"
             )
         )
     ),
     TabItem(
-        index = 2,
         title = "Material Widgets",
-        courses = emptyList()
+        courses = listOf(
+            TabItem.Course(
+                index = "2-1",
+                title = "Text",
+                content = "建立具有不同屬性的文字組件，如顏色、背景、字重、字體、字型樣式、字間距等。"
+            ),
+            TabItem.Course(
+                index = "2-2",
+                title = "Button",
+                content = "建立 文字/圖片按鈕、FAB 按鈕 或 Chips。修改按鈕的屬性，例如顏色、文字或狀態。"
+            ),
+            TabItem.Course(
+                index = "2-3",
+                title = "TextField",
+                content = "建立具有常規樣式或輪廓樣式的 TextField 組件。設置錯誤提示、顏色、狀態、圖標、電話或信用卡的視覺轉換，以及 IME 操作。"
+            ),
+            TabItem.Course(
+                index = "2-4",
+                title = "Image",
+                content = "建立用於顯示圖片的 Image 組件，設置圖片和裁剪樣式。更改 Image 的形狀或應用 ColorFilter 和 PorterDuff 模式。"
+            )
+        )
     ),
     TabItem(
-        index = 3,
         title = "Layout",
         courses = emptyList()
     ),
     TabItem(
-        index = 4,
         title = "State",
         courses = emptyList()
     ),
     TabItem(
-        index = 5,
         title = "Gesture",
         courses = emptyList()
     ),
     TabItem(
-        index = 6,
         title = "Graphics",
         courses = emptyList()
     ),
     TabItem(
-        index = 7,
         title = "Theming",
         courses = emptyList()
     ),
     TabItem(
-        index = 8,
         title = "Semantics",
         courses = emptyList()
     ),
     TabItem(
-        index = 9,
         title = "Animation",
         courses = emptyList()
     )

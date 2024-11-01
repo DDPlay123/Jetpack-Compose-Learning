@@ -2,14 +2,4 @@
     <string name="app_name">Jetpack_Compose_Learning</string>
 
     <string name="not_found">無資料</string>
-
-    <string name="course_1_1_title">1–1 Column, Row, Box, Spacer</string>
-    <string name="course_1_1_content">
-        建立 Rows、Columns、Box 和 Spacer，如何為 composable 元件添加修飾符。設定 padding、margin、對齊方式及其他屬性。
-    </string>
-
-    <string name="course_1_2_title">1–2 Surface, Shape, Clickable</string>
-    <string name="course_1_2_content">
-        建立並修改 Surface 來為 Composable 元件繪製背景，為任何 Composable 元件添加點擊操作。設置 weight 或 offset 修飾符。
-    </string>
 </resources>
