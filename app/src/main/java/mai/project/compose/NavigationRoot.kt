@@ -11,6 +11,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 import mai.project.compose.presentation.course_1.Course_1_1_ScreenRoot
+import mai.project.compose.presentation.course_1.Course_1_2_ScreenRoot
 import mai.project.compose.presentation.home.HomeScreenRoot
 
 private const val ROUTE_HOME = "ROUTE_HOME"
@@ -44,10 +45,22 @@ private fun NavGraphBuilder.homeGraph(
                 when {
                     index == 1 && course.index == 1 -> navController.navigate("1-1")
 
+                    index == 1 && course.index == 2 -> navController.navigate("1-2")
+
                     else -> Toast.makeText(context, context.getString(R.string.not_found), Toast.LENGTH_SHORT).show()
                 }
             })
         }
+        // Course 1
         composable(route = "1-1") { Course_1_1_ScreenRoot() }
+        composable(route = "1-2") { Course_1_2_ScreenRoot() }
+        // TODO Course 2
+        // TODO Course 3
+        // TODO Course 4
+        // TODO Course 5
+        // TODO Course 6
+        // TODO Course 7
+        // TODO Course 8
+        // TODO Course 9
     }
 }

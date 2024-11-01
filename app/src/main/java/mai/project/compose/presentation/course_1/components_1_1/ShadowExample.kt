@@ -1,4 +1,4 @@
-package mai.project.compose.presentation.course_1.components
+package mai.project.compose.presentation.course_1.components_1_1
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

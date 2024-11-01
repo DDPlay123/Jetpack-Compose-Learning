@@ -16,13 +16,13 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import mai.project.compose.presentation.home.components.CourseContentText
 import mai.project.compose.presentation.home.components.CourseTitleText
-import mai.project.compose.presentation.course_1.components.BoxExample
-import mai.project.compose.presentation.course_1.components.ColumnExample
-import mai.project.compose.presentation.course_1.components.PaddingExample
-import mai.project.compose.presentation.course_1.components.RowExample
-import mai.project.compose.presentation.course_1.components.ShadowExample
-import mai.project.compose.presentation.course_1.components.SpacerExample
-import mai.project.compose.presentation.course_1.components.WeightExample
+import mai.project.compose.presentation.course_1.components_1_1.BoxExample
+import mai.project.compose.presentation.course_1.components_1_1.ColumnExample
+import mai.project.compose.presentation.course_1.components_1_1.PaddingExample
+import mai.project.compose.presentation.course_1.components_1_1.RowExample
+import mai.project.compose.presentation.course_1.components_1_1.ShadowExample
+import mai.project.compose.presentation.course_1.components_1_1.SpacerExample
+import mai.project.compose.presentation.course_1.components_1_1.WeightExample
 import mai.project.compose.ui.theme.Jetpack_Compose_LearningTheme
 
 @Composable
