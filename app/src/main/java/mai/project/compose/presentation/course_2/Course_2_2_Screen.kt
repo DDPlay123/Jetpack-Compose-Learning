@@ -25,6 +25,7 @@ import mai.project.compose.presentation.course_2.components_2_2.IconButtonExampl
 import mai.project.compose.presentation.course_2.components_2_2.OtherChipExample
 import mai.project.compose.presentation.home.components.CourseHintText
 import mai.project.compose.presentation.home.components.CourseTitleText
+import mai.project.compose.ui.theme.Jetpack_Compose_LearningTheme
 
 @Composable
 fun Course_2_2_ScreenRoot() {
@@ -79,5 +80,7 @@ private fun Course_2_2_Screen(
 @PreviewLightDark
 @Composable
 private fun Course_2_2_ScreenPreview() {
-    Course_2_2_Screen()
+    Jetpack_Compose_LearningTheme {
+        Course_2_2_Screen()
+    }
 }
