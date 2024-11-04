@@ -10,18 +10,15 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.AssistChipDefaults
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -49,7 +46,7 @@ fun ChipExample(
         AssistChip(
             onClick = {},
             label = {
-                Text("Chip")
+                Text("AssistChip")
             }
         )
 
@@ -57,7 +54,7 @@ fun ChipExample(
             onClick = {},
             enabled = false,
             label = {
-                Text("Disabled Chip")
+                Text("Disabled AssistChip")
             }
         )
 
@@ -69,7 +66,7 @@ fun ChipExample(
                 labelColor = Color.White
             ),
             label = {
-                Text("Colored Chip")
+                Text("Colored AssistChip")
             }
         )
 
@@ -81,18 +78,7 @@ fun ChipExample(
                     modifier = Modifier.border(1.dp, Color.Red),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text("Chip")
-                    Spacer(modifier = Modifier.width(ButtonDefaults.IconSpacing))
-                    Icon(
-                        modifier = Modifier
-                            .clip(CircleShape)
-                            .background(Color.Gray.copy(alpha = .6f))
-                            .size(20.dp)
-                            .padding(4.dp),
-                        imageVector = Icons.Filled.Close,
-                        tint = Color(0xFFE0E0E0),
-                        contentDescription = null
-                    )
+                    Text("AssistChip")
                 }
             },
             leadingIcon = {
@@ -100,8 +86,20 @@ fun ChipExample(
                     painter = painterResource(R.drawable.avatar_1_raster),
                     modifier = Modifier
                         .border(1.dp, Color.Green)
-                        .size(24.dp)
+                        .size(AssistChipDefaults.IconSize)
                         .clip(CircleShape),
+                    contentDescription = null
+                )
+            },
+            trailingIcon = {
+                Icon(
+                    modifier = Modifier
+                        .clip(CircleShape)
+                        .background(Color.Gray.copy(alpha = .6f))
+                        .size(20.dp)
+                        .padding(4.dp),
+                    imageVector = Icons.Filled.Close,
+                    tint = Color(0xFFE0E0E0),
                     contentDescription = null
                 )
             }
@@ -124,9 +122,7 @@ fun ChipExample(
                     contentDescription = null
                 )
             },
-            label = {
-                Text("Chip")
-                Spacer(modifier = Modifier.width(ButtonDefaults.IconSpacing))
+            trailingIcon = {
                 Icon(
                     modifier = Modifier
                         .clip(CircleShape)
@@ -137,6 +133,9 @@ fun ChipExample(
                     tint = Color(0xFFE0E0E0),
                     contentDescription = null
                 )
+            },
+            label = {
+                Text("AssistChip")
             }
         )
     }

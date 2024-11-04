@@ -22,6 +22,7 @@ import mai.project.compose.presentation.course_2.components_2_2.ButtonWithIconEx
 import mai.project.compose.presentation.course_2.components_2_2.ChipExample
 import mai.project.compose.presentation.course_2.components_2_2.FloatingActionButtonExample
 import mai.project.compose.presentation.course_2.components_2_2.IconButtonExample
+import mai.project.compose.presentation.course_2.components_2_2.OtherChipExample
 import mai.project.compose.presentation.home.components.CourseHintText
 import mai.project.compose.presentation.home.components.CourseTitleText
 
@@ -66,8 +67,10 @@ private fun Course_2_2_Screen(
         HorizontalDivider(modifier = Modifier.padding(top = 12.dp))
 
         CourseTitleText(text = "Chip")
-        CourseHintText(text = "chip 樣式")
+        CourseHintText(text = "AssistChip 樣式")
         ChipExample()
+        CourseHintText(text = "其他 Chip 樣式")
+        OtherChipExample()
 
         Spacer(modifier = Modifier.height(16.dp))
     }
