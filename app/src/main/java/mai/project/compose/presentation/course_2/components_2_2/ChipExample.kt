@@ -2,12 +2,10 @@
 
 package mai.project.compose.presentation.course_2.components_2_2
 
-import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -88,7 +86,7 @@ fun ChipExample(
                     Icon(
                         modifier = Modifier
                             .clip(CircleShape)
-                            .background(Color.Black.copy(alpha = .6f))
+                            .background(Color.Gray.copy(alpha = .6f))
                             .size(20.dp)
                             .padding(4.dp),
                         imageVector = Icons.Filled.Close,
@@ -102,9 +100,41 @@ fun ChipExample(
                     painter = painterResource(R.drawable.avatar_1_raster),
                     modifier = Modifier
                         .border(1.dp, Color.Green)
-                        .padding(vertical = 4.dp)
-                        .size(32.dp)
+                        .size(24.dp)
                         .clip(CircleShape),
+                    contentDescription = null
+                )
+            }
+        )
+
+        AssistChip(
+            onClick = {},
+            shape = RoundedCornerShape(36),
+            border = BorderStroke(1.dp, Color(0xff66BB6A).copy(alpha = .9f)),
+            colors = AssistChipDefaults.assistChipColors(
+                containerColor = Color(0xff66BB6A),
+                labelColor = Color.White
+            ),
+            leadingIcon = {
+                Image(
+                    painter = painterResource(R.drawable.avatar_1_raster),
+                    modifier = Modifier
+                        .size(24.dp)
+                        .clip(CircleShape),
+                    contentDescription = null
+                )
+            },
+            label = {
+                Text("Chip")
+                Spacer(modifier = Modifier.width(ButtonDefaults.IconSpacing))
+                Icon(
+                    modifier = Modifier
+                        .clip(CircleShape)
+                        .background(Color.Black.copy(alpha = .6f))
+                        .size(20.dp)
+                        .padding(4.dp),
+                    imageVector = Icons.Filled.Close,
+                    tint = Color(0xFFE0E0E0),
                     contentDescription = null
                 )
             }

@@ -20,7 +20,6 @@ import mai.project.compose.presentation.course_2.components_2_2.ButtonGradientEx
 import mai.project.compose.presentation.course_2.components_2_2.ButtonShapeExample
 import mai.project.compose.presentation.course_2.components_2_2.ButtonWithIconExample
 import mai.project.compose.presentation.course_2.components_2_2.ChipExample
-import mai.project.compose.presentation.course_2.components_2_2.CustomChipExample
 import mai.project.compose.presentation.course_2.components_2_2.FloatingActionButtonExample
 import mai.project.compose.presentation.course_2.components_2_2.IconButtonExample
 import mai.project.compose.presentation.home.components.CourseHintText
@@ -69,8 +68,6 @@ private fun Course_2_2_Screen(
         CourseTitleText(text = "Chip")
         CourseHintText(text = "chip 樣式")
         ChipExample()
-        CourseHintText(text = "自定義 chip 樣式")
-        CustomChipExample()
 
         Spacer(modifier = Modifier.height(16.dp))
     }
