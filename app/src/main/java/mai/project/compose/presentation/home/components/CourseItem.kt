@@ -74,7 +74,7 @@ fun CourseItem(
             .padding(8.dp),
     ) {
         Text(
-            text = course.title,
+            text = "${course.index} ${course.title}",
             fontSize = 16.sp,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.primary

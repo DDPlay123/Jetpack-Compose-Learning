@@ -33,12 +33,12 @@ val getHomeTab = listOf(
         courses = listOf(
             TabItem.Course(
                 index = "1-1",
-                title = "1-1 Column, Row, Box, Spacer",
+                title = "Column, Row, Box, Spacer",
                 content = "建立 Rows、Columns、Box 和 Spacer，如何為 composable 元件添加修飾符。設定 padding、margin、對齊方式及其他屬性。"
             ),
             TabItem.Course(
                 index = "1-2",
-                title = "1–2 Surface, Shape, Clickable",
+                title = "Surface, Shape, Clickable",
                 content = "建立並修改 Surface 來為 Composable 元件繪製背景，為任何 Composable 元件添加點擊操作。設置 weight 或 offset 修飾符。"
             )
         )
@@ -65,6 +65,51 @@ val getHomeTab = listOf(
                 index = "2-4",
                 title = "Image",
                 content = "建立用於顯示圖片的 Image 組件，設置圖片和裁剪樣式。更改 Image 的形狀或應用 ColorFilter 和 PorterDuff 模式。"
+            ),
+            TabItem.Course(
+                index = "2-5-1",
+                title = "LazyColumn1",
+                content = "LazyColumn 是 Compose 中垂直 RecyclerView 的對應組件。"
+            ),
+            TabItem.Course(
+                index = "2-5-2",
+                title = "LazyColumn2",
+                content = "LazyColumn 滾動狀態和修改動態列表。"
+            ),
+            TabItem.Course(
+                index = "2-5-3",
+                title = "LazyRow",
+                content = "LazyRow 是 Compose 中水平 RecyclerView 的對應組件。"
+            ),
+            TabItem.Course(
+                index = "2-5-4",
+                title = "StickyHeader",
+                content = "帶有 StickyHeaders 的 LazyColumn。"
+            ),
+            TabItem.Course(
+                index = "2-5-5",
+                title = "LazyVerticalGrid",
+                content = "網格樣式的項目顯示。"
+            ),
+            TabItem.Course(
+                index = "2-5-6",
+                title = "Dynamic LazyVerticalGrid",
+                content = "具有動態高度的 LazyGridLayout。"
+            ),
+            TabItem.Course(
+                index = "2-5-7",
+                title = "ListItem",
+                content = "使用內建的 ListItem 組件創建單行、雙行、三行列表項目，或結合其他組件來構建列表項目。"
+            ),
+            TabItem.Course(
+                index = "2-5-8",
+                title = "LazyListLayoutInfo",
+                content = "使用 LazyLayoutState 的 LazyListLayoutInfo 獲取有關 LazyRow/LazyColumn 的元數據。"
+            ),
+            TabItem.Course(
+                index = "2-6",
+                title = "TopAppbar&Tabs",
+                content = "頂部應用欄顯示與當前畫面相關的資訊和操作。"
             )
         )
     ),
