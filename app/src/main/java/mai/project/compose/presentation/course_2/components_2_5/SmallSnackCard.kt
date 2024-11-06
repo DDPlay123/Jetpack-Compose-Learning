@@ -2,10 +2,8 @@ package mai.project.compose.presentation.course_2.components_2_5
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -29,7 +27,7 @@ import mai.project.compose.ui.theme.Jetpack_Compose_LearningTheme
 import kotlin.random.Random
 
 @Composable
-fun SnackCard(
+fun SmallSnackCard(
     modifier: Modifier = Modifier,
     snack: Snack,
     isFavorite: Boolean = false,
@@ -44,8 +42,7 @@ fun SnackCard(
     }
 
     Card(
-        modifier = modifier
-            .fillMaxWidth(),
+        modifier = modifier,
         shape = RoundedCornerShape(16.dp),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 8.dp
@@ -58,8 +55,7 @@ fun SnackCard(
             AsyncImage(
                 modifier = Modifier
                     .background(Color.LightGray)
-                    .fillMaxWidth()
-                    .height(150.dp),
+                    .size(150.dp),
                 model = snack.imageUrl,
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
@@ -74,31 +70,21 @@ fun SnackCard(
             )
         }
 
-        Column(
-            modifier = Modifier.padding(8.dp)
-        ) {
-            Text(
-                color = randomColor,
-                fontSize = 18.sp,
-                fontWeight = FontWeight.Bold,
-                text = snack.name
-            )
-            Text(
-                fontSize = 14.sp,
-                text = "$${snack.price}"
-            )
-            Text(
-                fontSize = 14.sp,
-                text = "Tags: ${snack.tagline}"
-            )
-        }
+        Text(
+            color = randomColor,
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold,
+            text = snack.name,
+            modifier = Modifier
+                .padding(8.dp)
+        )
     }
 }
 
 @PreviewLightDark
 @Composable
-private fun SnackCardPreview() {
+private fun SmallSnackCardPreview() {
     Jetpack_Compose_LearningTheme {
-        SnackCard(snack = snacks.first())
+        SmallSnackCard(snack = snacks.first())
     }
 }

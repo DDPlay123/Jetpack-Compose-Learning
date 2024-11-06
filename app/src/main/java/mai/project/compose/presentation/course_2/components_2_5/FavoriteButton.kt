@@ -15,6 +15,7 @@ import mai.project.compose.ui.theme.Jetpack_Compose_LearningTheme
 @Composable
 fun FavoriteButton(
     modifier: Modifier = Modifier,
+    tintColor: Color = Color(0xffE91E63),
     isFavorite: Boolean = false,
     onCheckedChange: (Boolean) -> Unit = {}
 ) {
@@ -23,7 +24,7 @@ fun FavoriteButton(
         onCheckedChange = onCheckedChange
     ) {
         Icon(
-            tint = Color(0xffE91E63),
+            tint = tintColor,
             modifier = modifier.graphicsLayer(
                 scaleX = 1.3f,
                 scaleY = 1.3f

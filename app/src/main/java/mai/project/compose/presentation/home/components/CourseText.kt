@@ -25,7 +25,8 @@ import mai.project.compose.ui.theme.Jetpack_Compose_LearningTheme
 @Composable
 fun CourseTitleText(
     modifier: Modifier = Modifier,
-    text: String
+    text: String,
+    textColor: Color = MaterialTheme.colorScheme.primary
 ) {
     Text(
         modifier = modifier
@@ -34,7 +35,7 @@ fun CourseTitleText(
             .padding(top = 12.dp, bottom = 6.dp),
         fontWeight = FontWeight.Bold,
         fontSize = 24.sp,
-        color = MaterialTheme.colorScheme.primary,
+        color = textColor,
         text = text
     )
 }

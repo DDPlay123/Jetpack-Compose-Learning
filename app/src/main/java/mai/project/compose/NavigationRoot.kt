@@ -19,6 +19,7 @@ import mai.project.compose.presentation.course_2.Course_2_3_ScreenRoot
 import mai.project.compose.presentation.course_2.Course_2_4_ScreenRoot
 import mai.project.compose.presentation.course_2.Course_2_5_1_ScreenRoot
 import mai.project.compose.presentation.course_2.Course_2_5_2_ScreenRoot
+import mai.project.compose.presentation.course_2.Course_2_5_3_ScreenRoot
 import mai.project.compose.presentation.home.HomeScreenRoot
 import mai.project.compose.presentation.home.model.getHomeTab
 
@@ -71,6 +72,7 @@ private fun NavGraphBuilder.homeGraph(
                     "2-4" -> Course_2_4_ScreenRoot()
                     "2-5-1" -> Course_2_5_1_ScreenRoot()
                     "2-5-2" -> Course_2_5_2_ScreenRoot()
+                    "2-5-3" -> Course_2_5_3_ScreenRoot()
                     // TODO Course 3
                     // TODO Course 4
                     // TODO Course 5
