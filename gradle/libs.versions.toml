@@ -13,6 +13,8 @@ navigationCompose = "2.8.3"
 
 glide_version = "1.0.0-beta01"
 coil_version = "3.0.0"
+datastore_version = "1.1.1"
+koin_bom_version = "4.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -36,6 +38,13 @@ glide = { group = "com.github.bumptech.glide", name = "compose", version.ref = "
 # Coil (https://coil-kt.github.io/coil/compose/)
 coil = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil_version" }
 coil-network = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil_version" }
+# DataStore (https://developer.android.com/topic/libraries/architecture/datastore)
+datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore_version" }
+# Koin (https://insert-koin.io/)
+koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin_bom_version" }
+koin-core = { module = "io.insert-koin:koin-core" }
+koin-android = { module = "io.insert-koin:koin-android" }
+koin-compose = { module = "io.insert-koin:koin-androidx-compose" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -46,4 +55,10 @@ compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "
 coil = [
     "coil",
     "coil-network"
+]
+
+koin = [
+    "koin-core",
+    "koin-android",
+    "koin-compose"
 ]

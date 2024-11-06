@@ -1,6 +1,5 @@
 package mai.project.compose.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -10,6 +9,9 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import mai.project.compose.domain.usecases.GetUserDarkThemeUseCase
+import org.koin.java.KoinJavaComponent.inject
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -40,13 +42,16 @@ fun Jetpack_Compose_LearningTheme(
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
+    val getDarkTheme: GetUserDarkThemeUseCase by inject(GetUserDarkThemeUseCase::class.java)
+    val isDarkTheme = getDarkTheme().collectAsStateWithLifecycle(initialValue = false)
+
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+            if (isDarkTheme.value) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
 
-        darkTheme -> DarkColorScheme
+        isDarkTheme.value -> DarkColorScheme
         else -> LightColorScheme
     }
 

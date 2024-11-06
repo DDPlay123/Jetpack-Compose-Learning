@@ -131,7 +131,13 @@ val getHomeTab = listOf(
     ),
     TabItem(
         title = "Theming",
-        courses = emptyList()
+        courses = listOf(
+            TabItem.Course(
+                index = "7-1",
+                title = "Dark & Light Mode",
+                content = "切換系統的亮色或暗色模式。"
+            )
+        )
     ),
     TabItem(
         title = "Semantics",

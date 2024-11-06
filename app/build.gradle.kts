@@ -35,6 +35,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
     composeOptions {
@@ -69,4 +70,9 @@ dependencies {
 
     implementation(libs.glide)
     implementation(libs.bundles.coil)
+
+    implementation(libs.datastore.preferences)
+
+    implementation(platform(libs.koin.bom))
+    implementation(libs.bundles.koin)
 }
