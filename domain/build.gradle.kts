@@ -36,11 +36,6 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":data"))
 
-    implementation(libs.androidx.core.ktx)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-
     implementation(libs.timber)
 
     implementation(platform(libs.koin.bom))

@@ -4,7 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import mai.project.compose.ui.theme.Jetpack_Compose_LearningTheme
+import mai.project.compose.presentation.NavigationRoot
+import mai.project.compose.presentation.theme.Jetpack_Compose_LearningTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

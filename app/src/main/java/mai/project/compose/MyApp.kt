@@ -2,8 +2,8 @@ package mai.project.compose
 
 import android.app.Application
 import mai.project.compose.data.di.dataModule
-import mai.project.compose.di.appModule
 import mai.project.compose.domain.di.domainModule
+import mai.project.compose.presentation.di.presentationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -25,7 +25,7 @@ class MyApp : Application() {
             // Load modules
             modules(
                 listOf(
-                    appModule,
+                    presentationModule,
                     domainModule,
                     dataModule
                 )
