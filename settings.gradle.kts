@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google {
             content {
@@ -18,6 +19,9 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+// 排除測試類別，加快打包速度
+gradle.startParameter.excludedTaskNames.addAll(listOf(":build-logic:convention:testClasses"))
 
 rootProject.name = "Jetpack_Compose_Learning"
 include(":app")

@@ -1,13 +1,18 @@
 [versions]
 # common properties
+applicationId = "mai.project.compose"
 minSdk = "24"
 targetSdk = "35"
 compileSdk = "35"
+versionName = "1.0"
+versionCode = "1"
 ####################################################################################################
 
 # plugin versions
 agp = "8.6.1"
+androidTools = "31.7.2"
 kotlin = "2.0.20"
+jetbrainsKotlinJvm = "2.0.20"
 
 # android library versions
 coreKtx = "1.15.0"
@@ -23,6 +28,7 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 
 # 3rd library versions
+desugarJdkLibs = "2.1.2"
 timber = "5.0.1"
 glide = "1.0.0-beta01"
 coil = "3.0.0"
@@ -50,7 +56,14 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 
+# Gradle Plugin Library
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+
 # Kotlin Coroutins
+# Java8 API (https://developer.android.com/studio/write/java8-support?hl=zh-tw)
+desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugarJdkLibs" }
 # Timber (https://github.com/JakeWharton/timber)
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 # Glide (https://bumptech.github.io/glide/int/compose.html)
@@ -75,6 +88,12 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 # kotlin plugins
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
+
+# custom gradle plugins
+mai-android-application = { id = "mai.android.application", version = "unspecified" }
+mai-android-library = { id = "mai.android.library", version = "unspecified" }
+mai-android-library-compose = { id = "mai.android.library.compose", version = "unspecified" }
 
 ####################################################################################################
 [bundles]
