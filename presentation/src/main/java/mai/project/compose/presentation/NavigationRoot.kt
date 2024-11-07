@@ -25,6 +25,7 @@ import mai.project.compose.presentation.ui.home.model.getHomeTab
 import timber.log.Timber
 import mai.project.compose.core.R
 import mai.project.compose.presentation.ui.course_2.Course_2_5_4_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_5_5_ScreenRoot
 
 private const val ROUTE_HOME = "ROUTE_HOME"
 
@@ -77,6 +78,7 @@ private fun NavGraphBuilder.homeGraph(
                     "2-5-2" -> Course_2_5_2_ScreenRoot()
                     "2-5-3" -> Course_2_5_3_ScreenRoot()
                     "2-5-4" -> Course_2_5_4_ScreenRoot()
+                    "2-5-5" -> Course_2_5_5_ScreenRoot()
                     // TODO Course 3
                     // TODO Course 4
                     // TODO Course 5
