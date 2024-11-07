@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Jetpack_Compose_Learning</string>
+
+    <string name="not_found">無資料</string>
+</resources>
