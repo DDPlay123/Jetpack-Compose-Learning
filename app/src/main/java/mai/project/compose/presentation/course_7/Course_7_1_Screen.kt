@@ -1,6 +1,7 @@
 package mai.project.compose.presentation.course_7
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,10 +16,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import mai.project.compose.domain.usecases.GetUserDarkThemeUseCase
-import mai.project.compose.domain.usecases.SaveUserDarkThemeUseCase
+import mai.project.compose.core.annotations.ThemeType
 import mai.project.compose.ui.theme.Jetpack_Compose_LearningTheme
-import org.koin.java.KoinJavaComponent.inject
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun Course_7_1_ScreenRoot() {
@@ -27,11 +27,12 @@ fun Course_7_1_ScreenRoot() {
 
 @Composable
 private fun Course_7_1_Screen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    viewModel: Course7ViewModel = koinViewModel()
 ) {
-    val saveDarkTheme: SaveUserDarkThemeUseCase by inject(SaveUserDarkThemeUseCase::class.java)
-    val getDarkTheme: GetUserDarkThemeUseCase by inject(GetUserDarkThemeUseCase::class.java)
-    val isDarkTheme = getDarkTheme().collectAsStateWithLifecycle(initialValue = false)
+    val isDarkTheme = isSystemInDarkTheme()
+    val getThemeState = viewModel.readThemeType
+        .collectAsStateWithLifecycle(initialValue = ThemeType.DEFAULT)
 
     val scope = rememberCoroutineScope()
 
@@ -44,17 +45,35 @@ private fun Course_7_1_Screen(
     ) {
         Button(
             onClick = {
-                val newTheme = !isDarkTheme.value
+                val newTheme = when (getThemeState.value) {
+                    ThemeType.DEFAULT -> if (isDarkTheme) {
+                        ThemeType.LIGHT
+                    } else {
+                        ThemeType.DARK
+                    }
+                    ThemeType.DARK -> ThemeType.LIGHT
+                    else -> ThemeType.DARK
+                }
                 scope.launch(Dispatchers.IO) {
-                    saveDarkTheme(newTheme)
+                    viewModel.saveThemeType(newTheme)
                 }
             }
         ) {
             Text(
-                text = if (isDarkTheme.value) {
-                    "Light Theme"
-                } else {
-                    "Dark Theme"
+                text = when (getThemeState.value) {
+                    ThemeType.DEFAULT -> if (isDarkTheme) {
+                        "Default：Light Theme"
+                    } else {
+                        "Default：Dark Theme"
+                    }
+
+                    ThemeType.DARK -> {
+                        "Light Theme"
+                    }
+
+                    else -> {
+                        "Dark Theme"
+                    }
                 }
             )
         }

@@ -10,7 +10,8 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import mai.project.compose.domain.usecases.GetUserDarkThemeUseCase
+import mai.project.compose.core.annotations.ThemeType
+import mai.project.compose.domain.usecases.GetUserThemeUseCase
 import org.koin.java.KoinJavaComponent.inject
 
 private val DarkColorScheme = darkColorScheme(
@@ -42,16 +43,21 @@ fun Jetpack_Compose_LearningTheme(
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
-    val getDarkTheme: GetUserDarkThemeUseCase by inject(GetUserDarkThemeUseCase::class.java)
-    val isDarkTheme = getDarkTheme().collectAsStateWithLifecycle(initialValue = false)
+    val getTheme: GetUserThemeUseCase by inject(GetUserThemeUseCase::class.java)
+    val getThemeState = getTheme().collectAsStateWithLifecycle(initialValue = ThemeType.DEFAULT)
 
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
-            if (isDarkTheme.value) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+            when (getThemeState.value) {
+                ThemeType.DEFAULT -> if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+                ThemeType.DARK -> dynamicDarkColorScheme(context)
+                else -> dynamicLightColorScheme(context)
+            }
         }
 
-        isDarkTheme.value -> DarkColorScheme
+        getThemeState.value == ThemeType.DEFAULT -> if (darkTheme) DarkColorScheme else LightColorScheme
+        getThemeState.value == ThemeType.DARK -> DarkColorScheme
         else -> LightColorScheme
     }
 

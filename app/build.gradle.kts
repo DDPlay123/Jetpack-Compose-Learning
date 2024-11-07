@@ -4,21 +4,23 @@ plugins {
     alias(libs.plugins.compose.compiler)
 }
 
+val mCompileSdk = libs.versions.compileSdk.get().toInt()
+val mMinSdk = libs.versions.minSdk.get().toInt()
+val mTargetSdk = libs.versions.targetSdk.get().toInt()
+
 android {
     namespace = "mai.project.compose"
-    compileSdk = 35
+    compileSdk = mCompileSdk
 
     defaultConfig {
         applicationId = "mai.project.compose"
-        minSdk = 24
-        targetSdk = 35
+        minSdk = mMinSdk
+        targetSdk = mTargetSdk
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        vectorDrawables { useSupportLibrary = true }
     }
 
     buildTypes {
@@ -49,6 +51,10 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
+    implementation(project(":presentation"))
+    implementation(project(":domain"))
+    implementation(project(":data"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -68,10 +74,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    implementation(libs.timber)
+
     implementation(libs.glide)
     implementation(libs.bundles.coil)
-
-    implementation(libs.datastore.preferences)
 
     implementation(platform(libs.koin.bom))
     implementation(libs.bundles.koin)
