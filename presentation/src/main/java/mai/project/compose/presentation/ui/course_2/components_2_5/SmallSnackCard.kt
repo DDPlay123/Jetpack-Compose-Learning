@@ -1,10 +1,9 @@
 package mai.project.compose.presentation.ui.course_2.components_2_5
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.defaultMinSize
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -51,13 +50,13 @@ fun SmallSnackCard(
         onClick = {}
     ) {
         Box(
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+                .size(150.dp),
             contentAlignment = Alignment.TopEnd
         ) {
             AsyncImage(
-                modifier = Modifier
-                    .background(Color.LightGray)
-                    .defaultMinSize(minWidth = 150.dp)
-                    .height(150.dp),
+                modifier = Modifier.fillMaxSize(),
                 model = snack.imageUrl,
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
