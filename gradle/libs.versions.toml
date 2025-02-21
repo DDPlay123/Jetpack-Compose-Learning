@@ -9,18 +9,18 @@ versionCode = "1"
 ####################################################################################################
 
 # plugin versions
-agp = "8.6.1"
-androidTools = "31.7.2"
-kotlin = "2.0.20"
+agp = "8.8.1"
+androidTools = "31.8.1"
+kotlin = "2.1.0"
 jetbrainsKotlinJvm = "2.0.20"
 
 # android library versions
 coreKtx = "1.15.0"
 lifecycleRuntimeKtx = "2.8.7"
-activityCompose = "1.9.3"
-composeBom = "2024.10.01"
-navigationRuntimeKtx = "2.8.3"
-navigationCompose = "2.8.3"
+activityCompose = "1.10.0"
+composeBom = "2025.02.00"
+navigationRuntimeKtx = "2.8.7"
+navigationCompose = "2.8.7"
 
 # test library versions
 junit = "4.13.2"
@@ -28,11 +28,11 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 
 # 3rd library versions
-desugarJdkLibs = "2.1.2"
+desugarJdkLibs = "2.1.4"
 timber = "5.0.1"
 glide = "1.0.0-beta01"
-coil = "3.0.0"
-datastore = "1.1.1"
+coil = "3.0.4"
+datastore = "1.1.2"
 koinBom = "4.0.0"
 
 ####################################################################################################
@@ -61,7 +61,6 @@ android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", ver
 android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 
-# Kotlin Coroutins
 # Java8 API (https://developer.android.com/studio/write/java8-support?hl=zh-tw)
 desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugarJdkLibs" }
 # Timber (https://github.com/JakeWharton/timber)
