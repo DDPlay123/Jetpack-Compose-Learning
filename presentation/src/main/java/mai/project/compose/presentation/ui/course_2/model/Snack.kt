@@ -1,10 +1,10 @@
 package mai.project.compose.presentation.ui.course_2.model
 
 import androidx.compose.runtime.Immutable
-import mai.project.compose.core.Explain_Immutable_Stable
+import mai.project.compose.core.ExplainImmutableStable
 
 /**
- * @see Immutable 說明 [Explain_Immutable_Stable]
+ * @see Immutable 說明 [ExplainImmutableStable]
  */
 @Immutable
 data class Snack(

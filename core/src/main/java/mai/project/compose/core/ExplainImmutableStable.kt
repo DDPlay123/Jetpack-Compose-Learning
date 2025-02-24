@@ -39,4 +39,4 @@ package mai.project.compose.core
  * - 若因需求需使用可變欄位，確保類行為對 Compose 而言是可追蹤、可預測，再標註 `@Stable`。
  * - 標註這些註解後，Compose 才能做更進一步的效能優化、局部重組；否則會用「保守」方式處理。
  */
-internal data object ExplainImmutableStable
+data object ExplainImmutableStable

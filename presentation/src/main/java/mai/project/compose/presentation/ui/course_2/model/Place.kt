@@ -4,11 +4,11 @@ import androidx.annotation.DrawableRes
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 import mai.project.compose.core.R
-import mai.project.compose.core.Explain_Immutable_Stable
+import mai.project.compose.core.ExplainImmutableStable
 import kotlin.random.Random
 
 /**
- * @see Immutable 說明 [Explain_Immutable_Stable]
+ * @see Immutable 說明 [ExplainImmutableStable]
  */
 @Immutable
 data class Place(
