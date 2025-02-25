@@ -108,7 +108,7 @@ val getHomeTab = listOf(
             ),
             TabItem.Course(
                 index = "2-6",
-                title = "TopAppbar&Tabs",
+                title = "TopAppbar & Tabs",
                 content = "頂部應用欄顯示與當前畫面相關的資訊和操作。"
             )
         )
