@@ -1,5 +1,6 @@
 package mai.project.compose.presentation.ui.course_2.components_2_5
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.HorizontalDivider
@@ -26,13 +27,16 @@ fun CombinedListItemExample(
         val onSwitchedChange: (Boolean) -> Unit = { switched = it }
 
         ListItem(
+            modifier = Modifier.clickable {
+                onSwitchedChange(!switched)
+            },
             headlineContent = {
                 Text(text = "Switch ListItem：$switched")
             },
             leadingContent = {
                 Switch(
-                    checked = false,
-                    onCheckedChange = onSwitchedChange
+                    checked = switched,
+                    onCheckedChange = null
                 )
             }
         )
@@ -43,13 +47,16 @@ fun CombinedListItemExample(
         val onCheckedChange: (Boolean) -> Unit = { checked = it }
 
         ListItem(
+            modifier = Modifier.clickable {
+                onCheckedChange(!checked)
+            },
             headlineContent = {
                 Text(text = "Switch ListItem：$checked")
             },
             leadingContent = {
                 Checkbox(
-                    checked = false,
-                    onCheckedChange = onCheckedChange
+                    checked = checked,
+                    onCheckedChange = null
                 )
             }
         )

@@ -19,7 +19,7 @@ import mai.project.compose.presentation.ui.course_2.components_2_5.CombinedListI
 import mai.project.compose.presentation.ui.course_2.components_2_5.OneLineListItemExample
 import mai.project.compose.presentation.ui.course_2.components_2_5.ThreeLineListItemExample
 import mai.project.compose.presentation.ui.course_2.components_2_5.TwoLineListItemExample
-import mai.project.compose.presentation.ui.home.components.CourseHintText
+import mai.project.compose.presentation.ui.home.components.CourseContentText
 import mai.project.compose.presentation.ui.home.components.CourseTitleText
 
 @Composable
@@ -40,16 +40,16 @@ private fun Course_2_5_7_Screen(
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         CourseTitleText(text = "ListItem")
-        CourseHintText(text = "單行 one line")
+        CourseContentText(text = "單行 one line")
         OneLineListItemExample()
 
-        CourseHintText(text = "兩行 two line")
+        CourseContentText(text = "兩行 two line")
         TwoLineListItemExample()
 
-        CourseHintText(text = "三行 three line")
+        CourseContentText(text = "三行 three line")
         ThreeLineListItemExample()
 
-        CourseHintText(text = "組合 combined line")
+        CourseContentText(text = "組合 combined line")
         CombinedListItemExample()
         Spacer(modifier = Modifier.height(16.dp))
     }
