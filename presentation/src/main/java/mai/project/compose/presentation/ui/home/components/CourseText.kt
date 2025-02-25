@@ -8,8 +8,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -17,7 +20,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import mai.project.compose.core.annotations.ThemeType
+import mai.project.compose.domain.usecases.GetUserThemeUseCase
 import mai.project.compose.presentation.theme.Jetpack_Compose_LearningTheme
+import org.koin.compose.koinInject
 
 /**
  * 標題文字
@@ -26,7 +33,7 @@ import mai.project.compose.presentation.theme.Jetpack_Compose_LearningTheme
 fun CourseTitleText(
     modifier: Modifier = Modifier,
     text: String,
-    textColor: Color = MaterialTheme.colorScheme.primary
+    textColor: Color = MaterialTheme.colorScheme.primary,
 ) {
     Text(
         modifier = modifier
@@ -53,11 +60,17 @@ private val boldRegex = Regex("(?<!\\*)\\*\\*(?!\\*).*?(?<!\\*)\\*\\*(?!\\*)")
 fun CourseContentText(
     modifier: Modifier = Modifier,
     text: String,
-    bullets: Boolean = true
+    bullets: Boolean = true,
+    getThemeType: GetUserThemeUseCase? = if (!LocalInspectionMode.current) koinInject() else null,
 ) {
     var results: MatchResult? = boldRegex.find(text)
     val boldIndexes = mutableListOf<Pair<Int, Int>>()
     val keywords = mutableListOf<String>()
+    val getThemeState = if (getThemeType != null) {
+        getThemeType().collectAsStateWithLifecycle(initialValue = ThemeType.DEFAULT)
+    } else {
+        remember { mutableIntStateOf(ThemeType.DEFAULT) }
+    }
 
     var finalText = text
 
@@ -100,10 +113,10 @@ fun CourseContentText(
             .fillMaxWidth()
             .padding(horizontal = 8.dp, vertical = 12.dp),
         fontSize = 16.sp,
-        color = if (isSystemInDarkTheme()) {
-            Color.White
-        } else {
-            Color.Black
+        color = when (getThemeState.value) {
+            ThemeType.DEFAULT -> if (isSystemInDarkTheme()) Color.White else Color.Black
+            ThemeType.DARK -> Color.White
+            else -> Color.Black
         },
         text = annotatedString,
         textAlign = TextAlign.Justify
@@ -116,7 +129,7 @@ fun CourseContentText(
 @Composable
 fun CourseHintText(
     modifier: Modifier = Modifier,
-    text: String
+    text: String,
 ) {
     Text(
         text = text,
