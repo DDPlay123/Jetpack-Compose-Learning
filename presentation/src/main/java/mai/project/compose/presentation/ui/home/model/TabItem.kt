@@ -110,6 +110,97 @@ val getHomeTab = listOf(
                 index = "2-6",
                 title = "TopAppbar & Tabs",
                 content = "頂部應用欄顯示與當前畫面相關的資訊和操作。"
+            ),
+            TabItem.Course(
+                index = "2-7",
+                title = "BottomNavigation",
+                content = "Material Design 底部導覽 (Bottom Navigation)。\n" +
+                        "底部導覽欄允許在應用程式的主要目的地之間進行切換。\n" +
+                        "BottomNavigation 應包含多個 BottomNavigationItem，每個項目代表一個獨立的目的地。"
+            ),
+            TabItem.Course(
+                index = "2-8",
+                title = "BottomAppBar",
+                content = "Material Design 底部應用欄 (Bottom App Bar)。\n" +
+                        "底部應用欄在螢幕底部顯示導覽選項和主要操作項目。"
+            ),
+            TabItem.Course(
+                index = "2-9-1",
+                title = "Side Navigation",
+                content = "使用側邊導覽進行導航。\n" +
+                        "在從堆疊中彈出後進行導航。\n" +
+                        "使用 scaffoldState.drawerState 開啟或關閉抽屜 (Drawer)。"
+            ),
+            TabItem.Course(
+                index = "2-9-2",
+                title = "ModalDrawer",
+                content = "模態導覽抽屜 (Modal Navigation Drawers)\n" +
+                        "模態導覽抽屜使用半透明遮罩 (scrim) 阻止與應用程式其他內容的互動。它們的層級高於大多數 UI 元素，且不會影響畫面的佈局網格。"
+            ),
+            TabItem.Course(
+                index = "2-9-3",
+                title = "ModalDrawer2",
+                content = "使用 Scaffold 的 ModalDrawer 範例\n" +
+                        "ModalDrawer 位於 Scaffold 的內容區域內。"
+            ),
+            TabItem.Course(
+                index = "2-9-4",
+                title = "ModalDrawer3",
+                content = "另一個使用 Scaffold 的 ModalDrawer 範例\n" +
+                        "此範例中，Scaffold 位於 ModalDrawer 的內容區域內。"
+            ),
+            TabItem.Course(
+                index = "2-10-1",
+                title = "BottomSheet",
+                content = "使用 BottomSheetScaffold 和 rememberBottomSheetScaffoldState 創建底部工作表 (Bottom Sheet)"
+            ),
+            TabItem.Course(
+                index = "2-10-2",
+                title = "ModalBottomSheetLayout",
+                content = "使用 BottomSheetScaffold 和 rememberBottomSheetScaffoldState 創建模態底部工作表 (Modal Bottom Sheet)"
+            ),
+            TabItem.Course(
+                index = "2-10-3",
+                title = "BottomDrawer",
+                content = "底部導覽抽屜 (Bottom Navigation Drawers)\n" +
+                        "底部導覽抽屜是一種模態抽屜，固定在螢幕底部。"
+            ),
+            TabItem.Course(
+                index = "2-10-4",
+                title = "BottomDrawer2",
+                content = "帶有 BottomAppBar 的 BottomDrawer"
+            ),
+            TabItem.Course(
+                index = "2-10-5",
+                title = "BackdropScaffold",
+                content = "背景層 (Backdrop)\n" +
+                        "背景層顯示在應用程式中的所有其他介面之後，提供上下文相關的可操作內容。"
+            ),
+            TabItem.Course(
+                index = "2-11",
+                title = "Snack, Progress, Select",
+                content = "範例包含：Snackbar、ProgressIndicator、Slider、CheckBox、TriStateCheckBox、RadioButton（含群組）、Switch"
+            ),
+            TabItem.Course(
+                index = "2-12",
+                title = "Dialog",
+                content = "創建 Dialog 和 AlertDialog（標準與自訂佈局）\n" +
+                        "實作關閉時的邏輯，並在對話框關閉時獲取結果。"
+            ),
+            TabItem.Course(
+                index = "2-13",
+                title = "SwipeToDismiss",
+                content = "創建可透過向左或向右滑動來關閉的可組合項 (Composable)"
+            ),
+            TabItem.Course(
+                index = "2-14",
+                title = "LazyColumn Checkbox",
+                content = "帶有 CheckBox 的 LazyColumn，可勾選和取消勾選項目"
+            ),
+            TabItem.Course(
+                index = "2-15",
+                title = "Chip and TextField",
+                content = "在輸入文字並選擇圖片後新增 Chips"
             )
         )
     ),
