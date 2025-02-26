@@ -21,6 +21,7 @@ import mai.project.compose.presentation.ui.course_2.components_2_6.CustomTabRowE
 import mai.project.compose.presentation.ui.course_2.components_2_6.MenuActionBarExample
 import mai.project.compose.presentation.ui.course_2.components_2_6.ScrollableTabRowExample
 import mai.project.compose.presentation.ui.course_2.components_2_6.TabRowExample
+import mai.project.compose.presentation.ui.course_2.components_2_6.WhatsappActionBarExample
 import mai.project.compose.presentation.ui.home.components.CourseContentText
 
 @Composable
@@ -47,15 +48,18 @@ private fun Course_2_6_Screen(
         CourseContentText(text = "2-) 基礎的 TopAppBar，帶有 Menu 選單")
         MenuActionBarExample()
 
-        CourseContentText(text = "3-) 基礎的 TabRow")
+        CourseContentText(text = "3-) Whatsapp Clone 的 TopAppBar")
+        WhatsappActionBarExample()
+
+        CourseContentText(text = "4-) 基礎的 TabRow")
         TabRowExample(showText = true, showIcon = false)
         TabRowExample(showText = false, showIcon = true)
         TabRowExample(showText = true, showIcon = true)
 
-        CourseContentText(text = "4-) 可滾動的 TabRow")
+        CourseContentText(text = "5-) 可滾動的 TabRow")
         ScrollableTabRowExample()
 
-        CourseContentText(text = "5-) 自定義樣式的 TabRow")
+        CourseContentText(text = "6-) 自定義樣式的 TabRow")
         CustomTabRowExample()
         CustomTabRowExample2()
 
