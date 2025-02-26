@@ -30,6 +30,10 @@ import mai.project.compose.presentation.ui.course_2.Course_2_5_6_ScreenRoot
 import mai.project.compose.presentation.ui.course_2.Course_2_5_7_ScreenRoot
 import mai.project.compose.presentation.ui.course_2.Course_2_5_8_ScreenRoot
 import mai.project.compose.presentation.ui.course_2.Course_2_6_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_7_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_8_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_9_1_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_9_2_ScreenRoot
 
 private const val ROUTE_HOME = "ROUTE_HOME"
 
@@ -87,6 +91,10 @@ private fun NavGraphBuilder.homeGraph(
                     "2-5-7" -> Course_2_5_7_ScreenRoot()
                     "2-5-8" -> Course_2_5_8_ScreenRoot()
                     "2-6" -> Course_2_6_ScreenRoot()
+                    "2-7" -> Course_2_7_ScreenRoot()
+                    "2-8" -> Course_2_8_ScreenRoot()
+                    "2-9-1" -> Course_2_9_1_ScreenRoot()
+                    "2-9-2" -> Course_2_9_2_ScreenRoot()
                     // TODO Course 3
                     // TODO Course 4
                     // TODO Course 5

@@ -126,28 +126,14 @@ val getHomeTab = listOf(
             ),
             TabItem.Course(
                 index = "2-9-1",
-                title = "Side Navigation",
-                content = "使用側邊導覽進行導航。\n" +
-                        "在從堆疊中彈出後進行導航。\n" +
-                        "使用 scaffoldState.drawerState 開啟或關閉抽屜 (Drawer)。"
-            ),
-            TabItem.Course(
-                index = "2-9-2",
                 title = "ModalDrawer",
                 content = "模態導覽抽屜 (Modal Navigation Drawers)\n" +
                         "模態導覽抽屜使用半透明遮罩 (scrim) 阻止與應用程式其他內容的互動。它們的層級高於大多數 UI 元素，且不會影響畫面的佈局網格。"
             ),
             TabItem.Course(
-                index = "2-9-3",
+                index = "2-9-2",
                 title = "ModalDrawer2",
-                content = "使用 Scaffold 的 ModalDrawer 範例\n" +
-                        "ModalDrawer 位於 Scaffold 的內容區域內。"
-            ),
-            TabItem.Course(
-                index = "2-9-4",
-                title = "ModalDrawer3",
-                content = "另一個使用 Scaffold 的 ModalDrawer 範例\n" +
-                        "此範例中，Scaffold 位於 ModalDrawer 的內容區域內。"
+                content = "ModalNavigationDrawer 位於 Scaffold 的內容區域內。"
             ),
             TabItem.Course(
                 index = "2-10-1",
