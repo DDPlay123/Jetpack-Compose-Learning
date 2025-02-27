@@ -70,33 +70,40 @@ private fun Course_2_9_1_Screen(
         }
     ) {
         Scaffold(
-            topBar = {
-                TopAppBar(
-                    title = { Text("Side Navigation") },
-                    navigationIcon = {
-                        IconButton(onClick = openDrawer) {
-                            Icon(
-                                imageVector = Icons.Default.Menu,
-                                contentDescription = "Open Navigation Drawer"
-                            )
-                        }
-                    }
-                )
-            }
+            topBar = { TopBar(openDrawer = openDrawer) }
         ) { innerPadding ->
-            Page(
-                title = list[selectedIndex],
-                innerPadding = innerPadding
+            Content(
+                innerPadding = innerPadding,
+                title = list[selectedIndex]
             )
         }
     }
 }
 
 @Composable
-private fun Page(
+private fun TopBar(
     modifier: Modifier = Modifier,
+    openDrawer: () -> Unit,
+) {
+    TopAppBar(
+        modifier = modifier,
+        title = { Text("Side Navigation") },
+        navigationIcon = {
+            IconButton(onClick = openDrawer) {
+                Icon(
+                    imageVector = Icons.Default.Menu,
+                    contentDescription = null
+                )
+            }
+        }
+    )
+}
+
+@Composable
+private fun Content(
+    modifier: Modifier = Modifier,
+    innerPadding: PaddingValues,
     title: String,
-    innerPadding: PaddingValues
 ) {
     Box(
         modifier = modifier

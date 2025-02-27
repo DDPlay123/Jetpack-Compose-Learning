@@ -4,6 +4,7 @@ package mai.project.compose.presentation.ui.course_2
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -39,8 +40,9 @@ fun Course_2_9_2_ScreenRoot() {
 
 @Composable
 private fun Course_2_9_2_Screen(
-    modifier: Modifier = Modifier
-) {val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+    modifier: Modifier = Modifier,
+) {
+    val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     val openDrawer: () -> Unit = { scope.launch { drawerState.open() } }
     val closeDrawer: () -> Unit = { scope.launch { drawerState.close() } }
@@ -49,19 +51,7 @@ private fun Course_2_9_2_Screen(
 
     Scaffold(
         modifier = modifier,
-        topBar = {
-            TopAppBar(
-                title = { Text("Side Navigation") },
-                navigationIcon = {
-                    IconButton(onClick = openDrawer) {
-                        Icon(
-                            imageVector = Icons.Default.Menu,
-                            contentDescription = "Open Navigation Drawer"
-                        )
-                    }
-                }
-            )
-        }
+        topBar = { TopBar(openDrawer = openDrawer) }
     ) { paddingValues ->
         ModalNavigationDrawer(
             modifier = modifier.padding(paddingValues),
@@ -83,7 +73,8 @@ private fun Course_2_9_2_Screen(
                 }
             }
         ) {
-            Page(
+            Content(
+                innerPadding = paddingValues,
                 title = list[selectedIndex]
             )
         }
@@ -91,13 +82,34 @@ private fun Course_2_9_2_Screen(
 }
 
 @Composable
-private fun Page(
+private fun TopBar(
     modifier: Modifier = Modifier,
-    title: String
+    openDrawer: () -> Unit,
+) {
+    TopAppBar(
+        modifier = modifier,
+        title = { Text("Side Navigation") },
+        navigationIcon = {
+            IconButton(onClick = openDrawer) {
+                Icon(
+                    imageVector = Icons.Default.Menu,
+                    contentDescription = null
+                )
+            }
+        }
+    )
+}
+
+@Composable
+private fun Content(
+    modifier: Modifier = Modifier,
+    innerPadding: PaddingValues,
+    title: String,
 ) {
     Box(
         modifier = modifier
-            .fillMaxSize(),
+            .fillMaxSize()
+            .padding(innerPadding),
         contentAlignment = Alignment.Center
     ) {
         Text("$title Content")

@@ -8,7 +8,7 @@ package mai.project.compose.presentation.ui.home.model
  */
 data class TabItem(
     val title: String,
-    val courses: List<Course>
+    val courses: List<Course>,
 ) {
     /**
      * 學習課程目錄
@@ -20,7 +20,7 @@ data class TabItem(
     data class Course(
         val index: String,
         val title: String,
-        val content: String
+        val content: String,
     )
 }
 
@@ -34,12 +34,12 @@ val getHomeTab = listOf(
             TabItem.Course(
                 index = "1-1",
                 title = "Column, Row, Box, Spacer",
-                content = "建立 Rows、Columns、Box 和 Spacer，如何為 composable 元件添加修飾符。設定 padding、margin、對齊方式及其他屬性。"
+                content = "建立 Rows、Columns、Box 和 Spacer，以及如何為 Composable 元件添加修飾符。設定 padding、margin、對齊方式及其他屬性。"
             ),
             TabItem.Course(
                 index = "1-2",
                 title = "Surface, Shape, Clickable",
-                content = "建立並修改 Surface 來為 Composable 元件繪製背景，為任何 Composable 元件添加點擊操作。設置 weight 或 offset 修飾符。"
+                content = "建立 Surface 來為 Composable 元件繪製背景及外觀 (Shape)，並為元件添加點擊操作。設置 weight 或 offset 修飾符。"
             )
         )
     ),
@@ -49,27 +49,27 @@ val getHomeTab = listOf(
             TabItem.Course(
                 index = "2-1",
                 title = "Text",
-                content = "建立具有不同屬性的文字組件，如顏色、背景、字重、字體、字型樣式、字間距等。"
+                content = "建立具有不同屬性的 Text 元件，如顏色、背景、字重、字體、字型樣式、字間距等。"
             ),
             TabItem.Course(
                 index = "2-2",
-                title = "Button",
-                content = "建立 文字/圖片按鈕、FAB 按鈕 或 Chips。修改按鈕的屬性，例如顏色、文字或狀態。"
+                title = "Button, Chip",
+                content = "建立 Text/Icon 按鈕、FAB 按鈕 及 Chips。修改按鈕的屬性，例如顏色、文字或狀態。"
             ),
             TabItem.Course(
                 index = "2-3",
                 title = "TextField",
-                content = "建立具有常規樣式或輪廓樣式的 TextField 組件。設置錯誤提示、顏色、狀態、圖標、電話或信用卡的視覺轉換，以及 IME 操作。"
+                content = "建立具有常規樣式或輪廓樣式的 TextField 元件。設置錯誤提示、顏色、狀態、圖標、電話或信用卡的視覺轉換，以及 IME 操作。"
             ),
             TabItem.Course(
                 index = "2-4",
                 title = "Image",
-                content = "建立用於顯示圖片的 Image 組件，設置圖片和裁剪樣式。更改 Image 的形狀或應用 ColorFilter 和 PorterDuff 模式。"
+                content = "建立用於顯示圖片的 Image 元件，設置圖片和裁剪樣式。更改 Image 的形狀或應用 ColorFilter 和 PorterDuff 模式。"
             ),
             TabItem.Course(
                 index = "2-5-1",
                 title = "LazyColumn1",
-                content = "LazyColumn 是 Compose 中垂直 RecyclerView 的對應組件。"
+                content = "LazyColumn 是 Compose 中垂直 RecyclerView LinearLayoutManager 的對應組件。"
             ),
             TabItem.Course(
                 index = "2-5-2",
@@ -79,7 +79,7 @@ val getHomeTab = listOf(
             TabItem.Course(
                 index = "2-5-3",
                 title = "LazyRow",
-                content = "LazyRow 是 Compose 中水平 RecyclerView 的對應組件。"
+                content = "LazyRow 是 Compose 中水平 RecyclerView LinearLayoutManager 的對應組件。"
             ),
             TabItem.Course(
                 index = "2-5-4",
@@ -89,12 +89,12 @@ val getHomeTab = listOf(
             TabItem.Course(
                 index = "2-5-5",
                 title = "LazyVerticalGrid",
-                content = "網格樣式的項目顯示。"
+                content = "LazyVerticalGrid 是 Compose 中垂直 RecyclerView GridLayoutManager 的對應組件。"
             ),
             TabItem.Course(
                 index = "2-5-6",
                 title = "Dynamic LazyVerticalGrid",
-                content = "具有動態高度的 LazyGridLayout。"
+                content = "具有動態調整高度的 LazyGridLayout。"
             ),
             TabItem.Course(
                 index = "2-5-7",
@@ -103,64 +103,45 @@ val getHomeTab = listOf(
             ),
             TabItem.Course(
                 index = "2-5-8",
-                title = "LazyListLayoutInfo",
-                content = "使用 LazyLayoutState 的 LazyListLayoutInfo 獲取有關 LazyRow/LazyColumn 的元數據。"
+                title = "LazyListState.LazyListLayoutInfo",
+                content = "使用 LazyListState 的 LazyListLayoutInfo 獲取有關 LazyRow/LazyColumn 的元數據。"
             ),
             TabItem.Course(
                 index = "2-6",
                 title = "TopAppbar & Tabs",
-                content = "頂部應用欄顯示與當前畫面相關的資訊和操作。"
+                content = "頂部 ActionBar 與 TabRow。"
             ),
             TabItem.Course(
                 index = "2-7",
-                title = "BottomNavigation",
-                content = "Material Design 底部導覽 (Bottom Navigation)。\n" +
-                        "底部導覽欄允許在應用程式的主要目的地之間進行切換。\n" +
-                        "BottomNavigation 應包含多個 BottomNavigationItem，每個項目代表一個獨立的目的地。"
+                title = "底部的 NavigationBar",
+                content = "NavigationBar 等同於 BottomNavigationView 元件，並使用 NavigationBarItem 製作項目樣式。"
             ),
             TabItem.Course(
                 index = "2-8",
-                title = "BottomAppBar",
-                content = "Material Design 底部應用欄 (Bottom App Bar)。\n" +
-                        "底部應用欄在螢幕底部顯示導覽選項和主要操作項目。"
+                title = "底部的 BottomAppBar",
+                content = "使用 Scaffold 的 BottomAppBar 實現底部導覽功能。"
             ),
             TabItem.Course(
                 index = "2-9-1",
-                title = "ModalDrawer",
-                content = "模態導覽抽屜 (Modal Navigation Drawers)\n" +
-                        "模態導覽抽屜使用半透明遮罩 (scrim) 阻止與應用程式其他內容的互動。它們的層級高於大多數 UI 元素，且不會影響畫面的佈局網格。"
+                title = "側邊的 ModalNavigationDrawer",
+                content = "ModalNavigationDrawer 等同於 DrawerLayout 元件，並使用 ModalDrawerSheet 創建側邊工作表。"
             ),
             TabItem.Course(
                 index = "2-9-2",
-                title = "ModalDrawer2",
-                content = "ModalNavigationDrawer 位於 Scaffold 的內容區域內。"
+                title = "ModalNavigationDrawer2",
+                content = "ModalNavigationDrawer 位於 Scaffold 的內容區域。"
             ),
             TabItem.Course(
                 index = "2-10-1",
-                title = "BottomSheet",
-                content = "使用 BottomSheetScaffold 和 rememberBottomSheetScaffoldState 創建底部工作表 (Bottom Sheet)"
+                title = "BottomSheetScaffold",
+                content = "使用 BottomSheetScaffold 和 rememberBottomSheetScaffoldState 創建底部工作表 (Bottom Sheet)。\n" +
+                        "BottomSheetScaffold 類似於使用 BottomSheetBehavior 控制的 Layout。"
             ),
             TabItem.Course(
                 index = "2-10-2",
-                title = "ModalBottomSheetLayout",
-                content = "使用 BottomSheetScaffold 和 rememberBottomSheetScaffoldState 創建模態底部工作表 (Modal Bottom Sheet)"
-            ),
-            TabItem.Course(
-                index = "2-10-3",
-                title = "BottomDrawer",
-                content = "底部導覽抽屜 (Bottom Navigation Drawers)\n" +
-                        "底部導覽抽屜是一種模態抽屜，固定在螢幕底部。"
-            ),
-            TabItem.Course(
-                index = "2-10-4",
-                title = "BottomDrawer2",
-                content = "帶有 BottomAppBar 的 BottomDrawer"
-            ),
-            TabItem.Course(
-                index = "2-10-5",
-                title = "BackdropScaffold",
-                content = "背景層 (Backdrop)\n" +
-                        "背景層顯示在應用程式中的所有其他介面之後，提供上下文相關的可操作內容。"
+                title = "ModalBottomSheet",
+                content = "使用 ModalBottomSheet 和 rememberModalBottomSheetState 創建模態底部工作表 (Modal Bottom Sheet)。\n" +
+                        "ModalBottomSheet 類似於 BottomSheetDialog。"
             ),
             TabItem.Course(
                 index = "2-11",
