@@ -29,6 +29,16 @@ data class TabItem(
  */
 val getHomeTab = listOf(
     TabItem(
+        title = "Bonus",
+        courses = listOf(
+            TabItem.Course(
+                index = "0-1",
+                title = "Slider",
+                content = ""
+            )
+        )
+    ),
+    TabItem(
         title = "Components",
         courses = listOf(
             TabItem.Course(
