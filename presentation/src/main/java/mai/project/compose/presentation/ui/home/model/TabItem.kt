@@ -108,7 +108,7 @@ val getHomeTab = listOf(
             ),
             TabItem.Course(
                 index = "2-6",
-                title = "TopAppbar & Tabs",
+                title = "TopAppbar, Tabs",
                 content = "頂部 ActionBar 與 TabRow。"
             ),
             TabItem.Course(
@@ -145,14 +145,13 @@ val getHomeTab = listOf(
             ),
             TabItem.Course(
                 index = "2-11",
-                title = "Snack, Progress, Select",
-                content = "範例包含：Snackbar、ProgressIndicator、Slider、CheckBox、TriStateCheckBox、RadioButton（含群組）、Switch"
+                title = "Snackbar, Progress, Selector, Slider",
+                content = "範例包含：Snackbar、Progress、CheckBox、TriStateCheckBox、Switch、RadioButton（含群組）、Slider"
             ),
             TabItem.Course(
                 index = "2-12",
                 title = "Dialog",
-                content = "創建 Dialog 和 AlertDialog（標準與自訂佈局）\n" +
-                        "實作關閉時的邏輯，並在對話框關閉時獲取結果。"
+                content = "範例包含：Dialog 和 AlertDialog（標準與自訂佈局）"
             ),
             TabItem.Course(
                 index = "2-13",
