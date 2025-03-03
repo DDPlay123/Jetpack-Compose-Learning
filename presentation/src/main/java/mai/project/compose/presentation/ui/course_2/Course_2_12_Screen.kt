@@ -1,4 +1,4 @@
-package mai.project.compose.presentation.ui.bonus
+package mai.project.compose.presentation.ui.course_2
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -15,19 +15,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import mai.project.compose.presentation.theme.Jetpack_Compose_LearningTheme
-import mai.project.compose.presentation.ui.bonus.components_0_1.CenteredSliderImpl
-import mai.project.compose.presentation.ui.bonus.components_0_1.LineSliderImpl
-import mai.project.compose.presentation.ui.bonus.components_0_1.StretchySlider
+import mai.project.compose.presentation.ui.course_2.components_2_12.AlertDialogExample
+import mai.project.compose.presentation.ui.course_2.components_2_12.DialogExample
 import mai.project.compose.presentation.ui.home.components.CourseContentText
-import mai.project.compose.presentation.ui.home.components.CourseHintText
+import mai.project.compose.presentation.ui.home.components.CourseTitleText
 
 @Composable
-fun Bonus_0_1_ScreenRoot() {
-    Bonus_0_1_Screen()
+fun Course_2_12_ScreenRoot() {
+    Course_2_12_Screen()
 }
 
 @Composable
-private fun Bonus_0_1_Screen(
+private fun Course_2_12_Screen(
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -36,19 +35,14 @@ private fun Bonus_0_1_Screen(
             .background(MaterialTheme.colorScheme.background)
             .verticalScroll(rememberScrollState())
     ) {
-        CourseContentText(text = "1-) Custom Sliders in Jetpack Compose")
-        CourseHintText(text = "https://www.sinasamaki.com/custom-material-3-sliders-in-jetpack-compose/")
-        LineSliderImpl()
+        CourseTitleText(text = "AlertDialog")
+        CourseContentText(text = "1-) AlertDialog 是一個具備 Material Design 樣式 與 語意支援 的提示對話框，適合用於 確認、警告、通知 等需求。")
+        AlertDialogExample()
         HorizontalDivider(modifier = Modifier.padding(top = 12.dp))
 
-        CourseContentText(text = "2-) Implementing Overslide interaction in Jetpack Compose")
-        CourseHintText(text = "https://www.sinasamaki.com/implementing-overslide-slider-interaction-in-jetpack-compose/")
-        StretchySlider()
-        HorizontalDivider(modifier = Modifier.padding(top = 12.dp))
-
-        CourseContentText(text = "3-) Centered Slider in Jetpack Compose")
-        CourseHintText(text = "https://www.sinasamaki.com/centered-slider-in-jetpack-compose/")
-        CenteredSliderImpl()
+        CourseTitleText(text = "Dialog")
+        CourseContentText(text = "2-) Dialog 是一個 純粹的容器，提供完全自訂內容的空間，適合製作 任何形式的自訂彈窗，但需自行處理無障礙語意")
+        DialogExample()
 
         Spacer(modifier = Modifier.height(16.dp))
     }
@@ -56,8 +50,8 @@ private fun Bonus_0_1_Screen(
 
 @PreviewLightDark
 @Composable
-private fun Bonus_0_1_ScreenPreview() {
+private fun Course_2_12_ScreenPreview() {
     Jetpack_Compose_LearningTheme {
-        Bonus_0_1_Screen()
+        Course_2_12_Screen()
     }
 }

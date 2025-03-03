@@ -161,7 +161,7 @@ val getHomeTab = listOf(
             TabItem.Course(
                 index = "2-12",
                 title = "Dialog",
-                content = "範例包含：Dialog 和 AlertDialog（標準與自訂佈局）"
+                content = "範例包含：AlertDialog 和 Dialog"
             ),
             TabItem.Course(
                 index = "2-13",
