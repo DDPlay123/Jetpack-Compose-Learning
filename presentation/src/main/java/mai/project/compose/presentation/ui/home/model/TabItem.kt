@@ -166,7 +166,7 @@ val getHomeTab = listOf(
             TabItem.Course(
                 index = "2-13",
                 title = "SwipeToDismiss",
-                content = "創建可透過向左或向右滑動來關閉的可組合項 (Composable)"
+                content = "監聽 LazyColumn 的滑動事件。"
             ),
             TabItem.Course(
                 index = "2-14",
