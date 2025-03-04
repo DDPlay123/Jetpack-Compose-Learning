@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.aspectRatio
@@ -85,17 +86,32 @@ fun HueWheelPicker(
                     .fillMaxSize()
                     .pointerInput(boxSizePx) {
                         detectDragGestures { change, _ ->
-                            val x = (change.position.x / boxSizePx * bitmapSize).toInt()
-                            val y = (change.position.y / boxSizePx * bitmapSize).toInt()
-                            if (x in 0 until bitmapSize && y in 0 until bitmapSize) {
-                                val pixelColor = bitmap!!.getPixel(x, y)
-                                val pickedColor = Color(pixelColor)
-                                if (pickedColor.alpha > 0f) {
-                                    selectedColor = pickedColor
+                            handleTabOrDragEvent(
+                                position = change.position,
+                                boxSizePx = boxSizePx,
+                                bitmapSize = bitmapSize,
+                                bitmap = bitmap!!,
+                                onColorChanged = {
+                                    selectedColor = it
                                     selectedOffset = change.position
-                                    onColorChanged(pickedColor)
+                                    onColorChanged(it)
                                 }
-                            }
+                            )
+                        }
+                    }
+                    .pointerInput(boxSizePx) {
+                        detectTapGestures { offset ->
+                            handleTabOrDragEvent(
+                                position = offset,
+                                boxSizePx = boxSizePx,
+                                bitmapSize = bitmapSize,
+                                bitmap = bitmap!!,
+                                onColorChanged = {
+                                    selectedColor = it
+                                    selectedOffset = offset
+                                    onColorChanged(it)
+                                }
+                            )
                         }
                     }
             ) {
@@ -125,6 +141,24 @@ fun HueWheelPicker(
             ) {
                 ColorWheel()
             }
+        }
+    }
+}
+
+private fun handleTabOrDragEvent(
+    position: Offset,
+    boxSizePx: Float,
+    bitmapSize: Int,
+    bitmap: Bitmap,
+    onColorChanged: (Color) -> Unit
+) {
+    val x = (position.x / boxSizePx * bitmapSize).toInt()
+    val y = (position.y / boxSizePx * bitmapSize).toInt()
+    if (x in 0 until bitmapSize && y in 0 until bitmapSize) {
+        val pixelColor = bitmap.getPixel(x, y)
+        val pickedColor = Color(pixelColor)
+        if (pickedColor.alpha > 0f) {
+            onColorChanged(pickedColor)
         }
     }
 }
