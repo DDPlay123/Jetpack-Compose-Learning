@@ -26,6 +26,8 @@ import mai.project.compose.presentation.ui.course_2.components_2_2.OtherChipExam
 import mai.project.compose.presentation.ui.home.components.CourseHintText
 import mai.project.compose.presentation.ui.home.components.CourseTitleText
 import mai.project.compose.presentation.theme.Jetpack_Compose_LearningTheme
+import mai.project.compose.presentation.ui.course_2.components_2_2.MultiChoiceSegmentedButton
+import mai.project.compose.presentation.ui.course_2.components_2_2.SingleSegmentedButtonExample
 
 @Composable
 fun Course_2_2_ScreenRoot() {
@@ -65,6 +67,13 @@ private fun Course_2_2_Screen(
         CourseTitleText(text = "Floating Action Button")
         CourseHintText(text = "Floating Action Button 樣式")
         FloatingActionButtonExample()
+        HorizontalDivider(modifier = Modifier.padding(top = 12.dp))
+
+        CourseTitleText(text = "Segmented Button")
+        CourseHintText(text = "Single Choice Segmented Button 樣式")
+        SingleSegmentedButtonExample()
+        CourseHintText(text = "Multi Choice Segmented Button 樣式")
+        MultiChoiceSegmentedButton()
         HorizontalDivider(modifier = Modifier.padding(top = 12.dp))
 
         CourseTitleText(text = "Chip")

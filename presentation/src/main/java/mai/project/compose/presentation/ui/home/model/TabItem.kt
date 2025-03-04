@@ -64,7 +64,7 @@ val getHomeTab = listOf(
             TabItem.Course(
                 index = "2-2",
                 title = "Button, Chip",
-                content = "建立 Text/Icon 按鈕、FAB 按鈕 及 Chips。修改按鈕的屬性，例如顏色、文字或狀態。"
+                content = "建立 Text/Icon 按鈕、FAB 按鈕、SegmentedButton 及 Chips。修改按鈕的屬性，例如顏色、文字或狀態。"
             ),
             TabItem.Course(
                 index = "2-3",
@@ -123,8 +123,9 @@ val getHomeTab = listOf(
             ),
             TabItem.Course(
                 index = "2-7",
-                title = "底部的 NavigationBar",
-                content = "NavigationBar 等同於 BottomNavigationView 元件，並使用 NavigationBarItem 製作項目樣式。"
+                title = "NavigationBar、NavigationRail",
+                content = "NavigationBar 等同於 BottomNavigationView 元件，並使用 NavigationBarItem 製作項目樣式。\n" +
+                "NavigationRail 等同於 NavigationRailView 元件，並使用 NavigationRailItem 製作項目樣式。"
             ),
             TabItem.Course(
                 index = "2-8",
@@ -161,7 +162,7 @@ val getHomeTab = listOf(
             TabItem.Course(
                 index = "2-12",
                 title = "Dialog",
-                content = "範例包含：AlertDialog 和 Dialog"
+                content = "範例包含：AlertDialog 和 Dialog。"
             ),
             TabItem.Course(
                 index = "2-13",
@@ -171,7 +172,52 @@ val getHomeTab = listOf(
             TabItem.Course(
                 index = "2-14",
                 title = "Chip and TextField",
-                content = "輸入文字並選擇圖片後新增 Chips"
+                content = "輸入文字並選擇圖片後新增 Chips。"
+            ),
+            TabItem.Course(
+                index = "2-15",
+                title = "SearchBar",
+                content = "實作一個簡易的 SearchBar 頁面。"
+            ),
+            TabItem.Course(
+                index = "2-16-1",
+                title = "HorizontalPager",
+                content = "水平移動的 ViewPager。"
+            ),
+            TabItem.Course(
+                index = "2-16-2",
+                title = "VerticalPager",
+                content = "垂直移動的 ViewPager。"
+            ),
+            TabItem.Course(
+                index = "2-17-1",
+                title = "PullRefresh1",
+                content = "基本下拉刷新，用 PullToRefreshBox 包裹。"
+            ),
+            TabItem.Course(
+                index = "2-17-2",
+                title = "PullRefresh2",
+                content = "使用 ViewModel + Channel 做刷新控制。"
+            ),
+            TabItem.Course(
+                index = "2-17-3",
+                title = "PullRefresh3",
+                content = "自行實作 PullToRefreshState，客製動畫。"
+            ),
+            TabItem.Course(
+                index = "2-17-4",
+                title = "PullRefresh4",
+                content = "用 Modifier.pullToRefresh() 並自繪指示器。"
+            ),
+            TabItem.Course(
+                index = "2-18",
+                title = "Badge",
+                content = ""
+            ),
+            TabItem.Course(
+                index = "2-19",
+                title = "Tooltip",
+                content = ""
             )
         )
     ),
