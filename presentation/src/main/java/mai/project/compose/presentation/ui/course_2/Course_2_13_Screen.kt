@@ -53,7 +53,7 @@ fun Course_2_13_ScreenRoot() {
 }
 
 @Composable
-fun Course_2_13_Screen(
+private fun Course_2_13_Screen(
     modifier: Modifier = Modifier,
 ) {
     val snackbarHostState = remember { SnackbarHostState() }

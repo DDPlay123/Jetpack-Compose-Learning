@@ -170,13 +170,8 @@ val getHomeTab = listOf(
             ),
             TabItem.Course(
                 index = "2-14",
-                title = "LazyColumn Checkbox",
-                content = "帶有 CheckBox 的 LazyColumn，可勾選和取消勾選項目"
-            ),
-            TabItem.Course(
-                index = "2-15",
                 title = "Chip and TextField",
-                content = "在輸入文字並選擇圖片後新增 Chips"
+                content = "輸入文字並選擇圖片後新增 Chips"
             )
         )
     ),
