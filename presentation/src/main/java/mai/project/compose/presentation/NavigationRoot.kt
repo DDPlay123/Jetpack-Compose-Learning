@@ -24,6 +24,32 @@ import mai.project.compose.presentation.ui.home.HomeScreenRoot
 import mai.project.compose.presentation.ui.home.model.getHomeTab
 import timber.log.Timber
 import mai.project.compose.core.R
+import mai.project.compose.presentation.ui.bonus.Bonus_0_1_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_10_1_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_10_2_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_11_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_12_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_13_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_14_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_15_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_16_1_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_16_2_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_17_1_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_17_2_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_17_3_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_17_4_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_18_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_19_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_5_4_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_5_5_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_5_6_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_5_7_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_5_8_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_6_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_7_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_8_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_9_1_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_9_2_ScreenRoot
 
 private const val ROUTE_HOME = "ROUTE_HOME"
 
@@ -64,6 +90,8 @@ private fun NavGraphBuilder.homeGraph(
         getHomeTab.flatMap { it.courses }.forEach { course ->
             composable(route = course.index) {
                 when (course.index) {
+                    // Bonus
+                    "0-1" -> Bonus_0_1_ScreenRoot()
                     // Course 1
                     "1-1" -> Course_1_1_ScreenRoot()
                     "1-2" -> Course_1_2_ScreenRoot()
@@ -75,6 +103,31 @@ private fun NavGraphBuilder.homeGraph(
                     "2-5-1" -> Course_2_5_1_ScreenRoot()
                     "2-5-2" -> Course_2_5_2_ScreenRoot()
                     "2-5-3" -> Course_2_5_3_ScreenRoot()
+                    "2-5-4" -> Course_2_5_4_ScreenRoot()
+                    "2-5-5" -> Course_2_5_5_ScreenRoot()
+                    "2-5-6" -> Course_2_5_6_ScreenRoot()
+                    "2-5-7" -> Course_2_5_7_ScreenRoot()
+                    "2-5-8" -> Course_2_5_8_ScreenRoot()
+                    "2-6" -> Course_2_6_ScreenRoot()
+                    "2-7" -> Course_2_7_ScreenRoot()
+                    "2-8" -> Course_2_8_ScreenRoot()
+                    "2-9-1" -> Course_2_9_1_ScreenRoot()
+                    "2-9-2" -> Course_2_9_2_ScreenRoot()
+                    "2-10-1" -> Course_2_10_1_ScreenRoot()
+                    "2-10-2" -> Course_2_10_2_ScreenRoot()
+                    "2-11" -> Course_2_11_ScreenRoot()
+                    "2-12" -> Course_2_12_ScreenRoot()
+                    "2-13" -> Course_2_13_ScreenRoot()
+                    "2-14" -> Course_2_14_ScreenRoot()
+                    "2-15" -> Course_2_15_ScreenRoot()
+                    "2-16-1" -> Course_2_16_1_ScreenRoot()
+                    "2-16-2" -> Course_2_16_2_ScreenRoot()
+                    "2-17-1" -> Course_2_17_1_ScreenRoot()
+                    "2-17-2" -> Course_2_17_2_ScreenRoot()
+                    "2-17-3" -> Course_2_17_3_ScreenRoot()
+                    "2-17-4" -> Course_2_17_4_ScreenRoot()
+                    "2-18" -> Course_2_18_ScreenRoot()
+                    "2-19" -> Course_2_19_ScreenRoot()
                     // TODO Course 3
                     // TODO Course 4
                     // TODO Course 5
