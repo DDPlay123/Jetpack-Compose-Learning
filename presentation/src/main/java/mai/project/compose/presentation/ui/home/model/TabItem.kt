@@ -33,8 +33,13 @@ val getHomeTab = listOf(
         courses = listOf(
             TabItem.Course(
                 index = "0-1",
-                title = "Slider",
-                content = ""
+                title = "Custom Slider",
+                content = "來源：https://www.sinasamaki.com/"
+            ),
+            TabItem.Course(
+                index = "0-2",
+                title = "Flutter Sunflower",
+                content = "Fork Flutter Sunflower\n來源：https://dartpad.dev/?sample=sunflower"
             )
         )
     ),

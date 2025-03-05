@@ -25,6 +25,7 @@ import mai.project.compose.presentation.ui.home.model.getHomeTab
 import timber.log.Timber
 import mai.project.compose.core.R
 import mai.project.compose.presentation.ui.bonus.Bonus_0_1_ScreenRoot
+import mai.project.compose.presentation.ui.bonus.Bonus_0_2_ScreenRoot
 import mai.project.compose.presentation.ui.course_2.Course_2_10_1_ScreenRoot
 import mai.project.compose.presentation.ui.course_2.Course_2_10_2_ScreenRoot
 import mai.project.compose.presentation.ui.course_2.Course_2_11_ScreenRoot
@@ -92,6 +93,7 @@ private fun NavGraphBuilder.homeGraph(
                 when (course.index) {
                     // Bonus
                     "0-1" -> Bonus_0_1_ScreenRoot()
+                    "0-2" -> Bonus_0_2_ScreenRoot()
                     // Course 1
                     "1-1" -> Course_1_1_ScreenRoot()
                     "1-2" -> Course_1_2_ScreenRoot()
