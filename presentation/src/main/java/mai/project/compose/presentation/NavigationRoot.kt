@@ -38,6 +38,8 @@ import mai.project.compose.presentation.ui.course_2.Course_2_17_1_ScreenRoot
 import mai.project.compose.presentation.ui.course_2.Course_2_17_2_ScreenRoot
 import mai.project.compose.presentation.ui.course_2.Course_2_17_3_ScreenRoot
 import mai.project.compose.presentation.ui.course_2.Course_2_17_4_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_18_ScreenRoot
+import mai.project.compose.presentation.ui.course_2.Course_2_19_ScreenRoot
 import mai.project.compose.presentation.ui.course_2.Course_2_5_4_ScreenRoot
 import mai.project.compose.presentation.ui.course_2.Course_2_5_5_ScreenRoot
 import mai.project.compose.presentation.ui.course_2.Course_2_5_6_ScreenRoot
@@ -124,6 +126,8 @@ private fun NavGraphBuilder.homeGraph(
                     "2-17-2" -> Course_2_17_2_ScreenRoot()
                     "2-17-3" -> Course_2_17_3_ScreenRoot()
                     "2-17-4" -> Course_2_17_4_ScreenRoot()
+                    "2-18" -> Course_2_18_ScreenRoot()
+                    "2-19" -> Course_2_19_ScreenRoot()
                     // TODO Course 3
                     // TODO Course 4
                     // TODO Course 5

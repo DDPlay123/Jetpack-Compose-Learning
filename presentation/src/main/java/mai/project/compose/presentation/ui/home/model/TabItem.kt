@@ -212,12 +212,12 @@ val getHomeTab = listOf(
             TabItem.Course(
                 index = "2-18",
                 title = "Badge",
-                content = ""
+                content = "Badge 用於顯示通知數量或狀態標記。常搭配 NavigationBar、Icon 等元件，用以呈現提醒或計數。支援數字徽章或純狀態指示，適合用於簡單通知提示。"
             ),
             TabItem.Course(
                 index = "2-19",
                 title = "Tooltip",
-                content = ""
+                content = "Tooltip 是一種輔助性說明，用於當使用者按下或懸停在元件上時，提供額外的提示文字。可用於解釋圖示、按鈕或其他互動元件的用途。"
             )
         )
     ),
