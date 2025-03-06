@@ -40,6 +40,11 @@ val getHomeTab = listOf(
                 index = "0-2",
                 title = "Flutter Sunflower",
                 content = "Fork Flutter Sunflower\n來源：https://dartpad.dev/?sample=sunflower"
+            ),
+            TabItem.Course(
+                index = "0-3",
+                title = "Custom PullToRefresh",
+                content = "Support Refresh & Load More"
             )
         )
     ),
