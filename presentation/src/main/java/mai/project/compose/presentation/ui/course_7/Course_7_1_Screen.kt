@@ -13,12 +13,20 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import mai.project.compose.core.annotations.ThemeType
+import mai.project.compose.domain.usecases.GetUserThemeUseCase
+import mai.project.compose.domain.usecases.SaveUserThemeUseCase
 import mai.project.compose.presentation.theme.Jetpack_Compose_LearningTheme
 import org.koin.androidx.compose.koinViewModel
+import timber.log.Timber
 
 @Composable
 fun Course_7_1_ScreenRoot() {
@@ -85,5 +93,19 @@ private fun Course_7_1_Screen(
 private fun Course_7_1_ScreenPreview() {
     Jetpack_Compose_LearningTheme {
         Course_7_1_Screen()
+    }
+}
+
+class Course7ViewModel(
+    getUserThemeUseCase: GetUserThemeUseCase,
+    private val saveUserThemeUseCase: SaveUserThemeUseCase
+) : ViewModel() {
+
+    val readThemeType = getUserThemeUseCase()
+        .catch { e -> Timber.e(message = "Failed to fetch theme type", t = e) }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(stopTimeoutMillis = 500L), ThemeType.DEFAULT)
+
+    fun saveThemeType(@ThemeType type: Int) {
+        viewModelScope.launch { saveUserThemeUseCase(type) }
     }
 }
