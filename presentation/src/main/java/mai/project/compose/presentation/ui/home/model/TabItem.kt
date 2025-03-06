@@ -233,7 +233,13 @@ val getHomeTab = listOf(
     ),
     TabItem(
         title = "Layout",
-        courses = emptyList()
+        courses = listOf(
+            TabItem.Course(
+                index = "3-1-1",
+                title = "Custom Modifier",
+                content = "使用 layout、Measurable、Constraint、Placeable 和 LayoutModifier 創建自訂的 modifiers。"
+            )
+        )
     ),
     TabItem(
         title = "State",
