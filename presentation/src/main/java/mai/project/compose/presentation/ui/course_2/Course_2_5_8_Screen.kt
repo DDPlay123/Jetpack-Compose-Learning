@@ -53,7 +53,8 @@ private fun Course_2_5_8_Screen(
         CourseContentText(
             text = "LazyListLayoutInfo 是在佈局計算時產生的，你可以用它來計算當前可見的項目。\n" +
                     "需要注意，這個物件屬性是可觀察的，並且會在每次滾動或重新測量後更新。如果你在可組合函式 (composable function) 中使用它，每次變更時都會觸發重新組合 (recomposition)，可能會導致效能問題，例如無限重新組合的情況。因此，建議避免在組合中直接使用它。\n" +
-                    "如果你需要根據此值執行一些副作用 (Side Effects)，例如發送分析事件或更新狀態，請考慮使用 snapshotFlow。"
+                    "如果你需要根據此值執行一些副作用 (Side Effects)，例如發送分析事件或更新狀態，請考慮使用 snapshotFlow。",
+            bullets = false
         )
 
         val scrollState = rememberLazyListState()
@@ -84,7 +85,10 @@ private fun Course_2_5_8_Screen(
             }
         }
 
-        CourseContentText(text = "Start Padding ${startPadding.floatValue.toInt()}.dp")
+        CourseContentText(
+            text = "Start Padding ${startPadding.floatValue.toInt()}.dp",
+            bullets = false
+        )
         Slider(
             modifier = Modifier.padding(horizontal = 8.dp),
             value = startPadding.floatValue,
@@ -92,7 +96,10 @@ private fun Course_2_5_8_Screen(
             onValueChange = { startPadding.floatValue = it }
         )
 
-        CourseContentText(text = "End Padding ${endPadding.floatValue.toInt()}.dp")
+        CourseContentText(
+            text = "End Padding ${endPadding.floatValue.toInt()}.dp",
+            bullets = false
+        )
         Slider(
             modifier = Modifier.padding(horizontal = 8.dp),
             value = endPadding.floatValue,

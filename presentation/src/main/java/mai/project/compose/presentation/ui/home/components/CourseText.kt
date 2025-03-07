@@ -34,6 +34,7 @@ fun CourseTitleText(
     modifier: Modifier = Modifier,
     text: String,
     textColor: Color = MaterialTheme.colorScheme.primary,
+    textAlign: TextAlign? = TextAlign.Start
 ) {
     Text(
         modifier = modifier
@@ -43,7 +44,8 @@ fun CourseTitleText(
         fontWeight = FontWeight.Bold,
         fontSize = 24.sp,
         color = textColor,
-        text = text
+        text = text,
+        textAlign = textAlign
     )
 }
 
@@ -60,6 +62,7 @@ private val boldRegex = Regex("(?<!\\*)\\*\\*(?!\\*).*?(?<!\\*)\\*\\*(?!\\*)")
 fun CourseContentText(
     modifier: Modifier = Modifier,
     text: String,
+    textAlign: TextAlign? = TextAlign.Justify,
     bullets: Boolean = true,
     getThemeType: GetUserThemeUseCase? = if (!LocalInspectionMode.current) koinInject() else null,
 ) {
@@ -119,7 +122,7 @@ fun CourseContentText(
             else -> Color.Black
         },
         text = annotatedString,
-        textAlign = TextAlign.Justify
+        textAlign = textAlign
     )
 }
 

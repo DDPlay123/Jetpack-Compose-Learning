@@ -238,6 +238,11 @@ val getHomeTab = listOf(
                 index = "3-1-1",
                 title = "Custom Modifier",
                 content = "使用 layout、Measurable、Constraint、Placeable 和 LayoutModifier 創建自訂的 modifiers。"
+            ),
+            TabItem.Course(
+                index = "3-1-2",
+                title = "onGloballyPositioned",
+                content = "使用 Modifier.onGloballyPositioned 可取得 Composable 在父層、根層或 window 中的位置。"
             )
         )
     ),
@@ -262,13 +267,5 @@ val getHomeTab = listOf(
                 content = "切換系統的亮色或暗色模式。"
             )
         )
-    ),
-    TabItem(
-        title = "Semantics",
-        courses = emptyList()
-    ),
-    TabItem(
-        title = "Animation",
-        courses = emptyList()
     )
 )

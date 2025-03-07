@@ -53,6 +53,7 @@ fun Modifier.composedBackground(
             )
         }
 
+        // drawBehind 用於繪製背景，原始內容會在其之上
         Modifier.drawBehind {
             val widthInPx = with(density) { width.toPx() }
             val heightInPx = with(density) { height.toPx() }

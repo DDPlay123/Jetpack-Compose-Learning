@@ -40,16 +40,16 @@ private fun Course_2_5_7_Screen(
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         CourseTitleText(text = "ListItem")
-        CourseContentText(text = "單行 one line")
+        CourseContentText(text = "單行 one line", bullets = false)
         OneLineListItemExample()
 
-        CourseContentText(text = "兩行 two line")
+        CourseContentText(text = "兩行 two line", bullets = false)
         TwoLineListItemExample()
 
-        CourseContentText(text = "三行 three line")
+        CourseContentText(text = "三行 three line", bullets = false)
         ThreeLineListItemExample()
 
-        CourseContentText(text = "組合 combined line")
+        CourseContentText(text = "組合 combined line", bullets = false)
         CombinedListItemExample()
         Spacer(modifier = Modifier.height(16.dp))
     }
