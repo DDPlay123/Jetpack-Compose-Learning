@@ -60,7 +60,7 @@ class MyApp : Application() {
 
                             // 超過最大長度，就截斷
                             if (msg.length > maxLength) {
-                                adjustedMessage = msg.substring(0, maxLength) + "…"
+                                adjustedMessage = msg.take(maxLength) + "…"
                             }
                         }
                         super.log(priority, adjustedMessage, *args)

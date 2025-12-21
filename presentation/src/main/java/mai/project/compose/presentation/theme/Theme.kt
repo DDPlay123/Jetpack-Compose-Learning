@@ -50,8 +50,7 @@ fun Jetpack_Compose_LearningTheme(
 ) {
     // 此處是為了修復在預覽模式下，無法讀取 UseCase 的情況
     val getThemeState = if (getThemeType != null) {
-        getThemeType()
-            .collectAsStateWithLifecycle(initialValue = ThemeType.DEFAULT)
+        getThemeType().collectAsStateWithLifecycle(initialValue = ThemeType.DEFAULT)
     } else {
         remember { mutableIntStateOf(ThemeType.DEFAULT) }
     }

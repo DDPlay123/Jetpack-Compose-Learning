@@ -2,7 +2,9 @@ package mai.project.compose.presentation
 
 import android.content.Context
 import android.widget.Toast
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
@@ -63,6 +65,7 @@ fun NavigationRoot(
 ) {
     val context = LocalContext.current
     NavHost(
+        modifier = Modifier.systemBarsPadding(),
         navController = navController,
         startDestination = ROUTE_HOME
     ) {
