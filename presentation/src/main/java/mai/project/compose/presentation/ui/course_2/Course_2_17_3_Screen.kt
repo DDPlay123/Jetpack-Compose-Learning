@@ -61,6 +61,8 @@ private fun Course_2_17_3_Screen(
 
             override val distanceFraction get() = anim.value
 
+            override val isAnimating: Boolean = true
+
             override suspend fun animateToThreshold() {
                 anim.animateTo(1f, spring(dampingRatio = Spring.DampingRatioHighBouncy))
             }

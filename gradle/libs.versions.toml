@@ -2,38 +2,38 @@
 # common properties
 applicationId = "mai.project.compose"
 minSdk = "24"
-targetSdk = "35"
-compileSdk = "35"
+targetSdk = "36"
+compileSdk = "36"
 versionName = "1.0"
 versionCode = "1"
 ####################################################################################################
 
 # plugin versions
-agp = "8.8.2"
-androidTools = "31.9.0"
-kotlin = "2.1.0"
-jetbrainsKotlinJvm = "2.0.20"
+agp = "8.13.2"
+androidTools = "31.13.2"
+kotlin = "2.3.0"
+jetbrainsKotlinJvm = "2.3.0"
 
 # android library versions
-coreKtx = "1.15.0"
-lifecycleRuntimeKtx = "2.8.7"
-activityCompose = "1.10.1"
-composeBom = "2025.02.00"
-navigationRuntimeKtx = "2.8.8"
-navigationCompose = "2.8.8"
+coreKtx = "1.17.0"
+lifecycleRuntimeKtx = "2.10.0"
+activityCompose = "1.12.2"
+composeBom = "2025.12.01"
+navigationRuntimeKtx = "2.9.6"
+navigationCompose = "2.9.6"
 
 # test library versions
 junit = "4.13.2"
-junitVersion = "1.2.1"
-espressoCore = "3.6.1"
+junitVersion = "1.3.0"
+espressoCore = "3.7.0"
 
 # 3rd library versions
 desugarJdkLibs = "2.1.5"
 timber = "5.0.1"
-glide = "1.0.0-beta01"
-coil = "3.0.4"
-datastore = "1.1.3"
-koinBom = "4.0.0"
+glide = "1.0.0-beta08"
+coil = "3.3.0"
+datastore = "1.2.0"
+koinBom = "4.1.1"
 
 ####################################################################################################
 [libraries]
@@ -45,6 +45,7 @@ androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigationRuntimeKtx" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 
