@@ -14,18 +14,16 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
  * 設定 Application/Library Module 的 Kotlin Compile 內容
  */
 internal fun Project.configureKotlinAndroid(
-    commonExtension: CommonExtension<*, *, *, *, *, *>
+    commonExtension: CommonExtension
 ) {
     commonExtension.apply {
         compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
 
         defaultConfig.minSdk = libs.findVersion("minSdk").get().toString().toInt()
 
-        compileOptions {
-            isCoreLibraryDesugaringEnabled = true
-            sourceCompatibility = JavaVersion.VERSION_11
-            targetCompatibility = JavaVersion.VERSION_11
-        }
+        compileOptions.isCoreLibraryDesugaringEnabled = true
+        compileOptions.sourceCompatibility = JavaVersion.VERSION_11
+        compileOptions.targetCompatibility = JavaVersion.VERSION_11
     }
 
     configureKotlin()

@@ -8,12 +8,10 @@ import org.gradle.kotlin.dsl.dependencies
  * 設定 Application/Library Module 的 Compose 內容
  */
 internal fun Project.configureAndroidCompose(
-    commonExtension: CommonExtension<*, *, *, *, *, *>
+    commonExtension: CommonExtension
 ) {
     commonExtension.run {
-        buildFeatures {
-            compose = true
-        }
+        buildFeatures.compose = true
 
         dependencies {
             "implementation"(libs.findLibrary("androidx.core.ktx").get())

@@ -1,77 +1,44 @@
 package mai.project.compose.convention
 
 import com.android.build.api.dsl.ApplicationExtension
-import com.android.build.api.dsl.BuildType
 import com.android.build.api.dsl.CommonExtension
 import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.configure
 
 /**
  * 設定 Application/Library Module 的 BuildType 內容
  */
 internal fun Project.configureBuildTypes(
-    commonExtension: CommonExtension<*, *, *, *, *, *>,
+    commonExtension: CommonExtension,
     extensionType: ExtensionType
 ) {
     commonExtension.run {
-        buildFeatures {
-            buildConfig = true
-        }
+        buildFeatures.buildConfig = true
+        packaging.resources.excludes += "/META-INF/{AL2.0,LGPL2.1}"
+    }
 
-        when(extensionType) {
-            ExtensionType.APPLICATION -> {
-                extensions.configure<ApplicationExtension> {
-                    buildTypes {
-                        debug {
-                            configureDebugBuildType()
-                        }
-                        release {
-                            configureReleaseBuildType(commonExtension)
-                        }
-                    }
-                }
-            }
-            ExtensionType.LIBRARY -> {
-                extensions.configure<LibraryExtension> {
-                    buildTypes {
-                        debug {
-                            configureDebugBuildType()
-                        }
-                        release {
-                            configureReleaseBuildType(commonExtension)
-                        }
-                    }
-                }
+    // AGP 9.x: buildTypes 不在 CommonExtension 上，需透過具體型別存取
+    // debug/release 快捷語法已移除，改用 named("debug")/named("release")
+    when (extensionType) {
+        ExtensionType.APPLICATION -> (commonExtension as ApplicationExtension).buildTypes {
+            named("debug") { }
+            named("release") {
+                isMinifyEnabled = true
+                proguardFiles(
+                    commonExtension.getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+                )
             }
         }
-
-        packaging {
-            resources {
-                excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        ExtensionType.LIBRARY -> (commonExtension as LibraryExtension).buildTypes {
+            named("debug") { }
+            named("release") {
+                isMinifyEnabled = true
+                proguardFiles(
+                    commonExtension.getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+                )
             }
         }
     }
-}
-
-/**
- * 設定 Debug BuildType 的內容
- */
-private fun BuildType.configureDebugBuildType() {
-    // Ex. buildConfigField(xxx)
-}
-
-/**
- * 設定 Release BuildType 的內容
- */
-private fun BuildType.configureReleaseBuildType(
-    commonExtension: CommonExtension<*, *, *, *, *, *>
-) {
-    // Ex. buildConfigField(xxx)
-
-    isMinifyEnabled = true
-    proguardFiles(
-        commonExtension.getDefaultProguardFile("proguard-android-optimize.txt"),
-        "proguard-rules.pro"
-    )
 }
